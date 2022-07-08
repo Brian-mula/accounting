@@ -25,12 +25,12 @@
           </a>
         </li>
          <li>
-          <a
+          <nuxt-link to="/manageInvoices"
             href="#"
             class="flex items-center p-2 text-base font-normal text-gray-50 hover:bg-blue-700"
           >
             <span class="ml-10 text-sm">Manage Invoices</span>
-          </a>
+          </nuxt-link >
         </li>
          <li>
           <a
@@ -61,6 +61,8 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const isActive=ref(true)
+</script>
 
 <style lang="scss" scoped></style>
