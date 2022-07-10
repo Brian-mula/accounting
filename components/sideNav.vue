@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="h-full bg-blue-900">
     <div class="overflow-y-auto py-4 bg-blue-900 h-screen">
       <a
         href="https://flowbite.com/"

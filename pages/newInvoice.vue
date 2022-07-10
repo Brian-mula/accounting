@@ -91,9 +91,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="bg-white border-b">
+            <tr
+              class="bg-white border-b"
+              v-for="tableRow in tableRows"
+              :key="tableRow"
+            >
               <td class="px-6 py-4 w-20">
                 <select
+                  v-model="tableRow.item"
                   name=""
                   id=""
                   class="block py-4 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-gray-200 peer"
@@ -102,37 +107,58 @@
                 </select>
               </td>
               <td class="px-6 py-4 w-80">
-                <textarea class="w-full border border-slate-300" />
+                <textarea
+                  class="w-full border border-slate-300"
+                  v-model="tableRow.description"
+                />
               </td>
               <td class="px-6 py-4 w-20">
-               <input
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder=""
-              />
+                <input
+                  v-model="tableRow.unitPrice"
+                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  placeholder=""
+                />
               </td>
               <td class="px-6 py-4 w-20">
-               <input
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder=""
-              />
-              </td>
-              <td class="px-6 py-4 w-20">
-              Ksh.xxx
+                <input
+                  v-model="tableRow.quantity"
+                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  placeholder=""
+                />
               </td>
               <td class="px-6 py-4 w-20">Ksh.xxx</td>
+              <td class="px-6 py-4 w-20">Ksh.xxx</td>
+              <td class="px-6 py-4 w-20">
+                <div class="cursor-pointer" @click="deleteRaw">
+                  <img
+                    src="~/assets/images/delete.png"
+                    alt=""
+                    class="h-6 w-6 mx-2"
+                  />
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>
         <div class="bg-white shadow-md p-4 flex justify-between">
-      <div class=" cursor-pointer">
-       <img
-          src="~/assets/images/add-svgrepo-com.svg"
-          alt=""
-          class="h-6 w-6 mx-2"
-        />
-      </div>
-        <div class="text-purple-800">Total: Ksh. xxx</div>
+          <div class="cursor-pointer" @click="addNewRow">
+            <img
+              src="~/assets/images/add-svgrepo-com.svg"
+              alt=""
+              class="h-6 w-6 mx-2"
+            />
+          </div>
+          <div class="text-purple-800">Total: Ksh. xxx</div>
         </div>
+      </div>
+
+      <div class="flex justify-center items-center">
+        <button
+          type="button"
+          class=" mt-6 inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
+        >
+          Save Invoice
+        </button>
       </div>
     </form>
   </div>
@@ -144,6 +170,31 @@ import "@vuepic/vue-datepicker/dist/main.css";
 
 const date = ref();
 const issueDate = ref();
+
+const tableRows = ref([
+  {
+    item: "",
+    description: "",
+    unitPrice: "",
+    quantity: "",
+    subTotal: "",
+    total: "",
+  },
+]);
+const addNewRow = () => {
+  tableRows.value.push({
+    item: "",
+    description: "",
+    unitPrice: "",
+    quantity: "",
+    subTotal: "",
+    total: "",
+  });
+  console.log("you clicked me");
+};
+const deleteRaw = () => {
+  tableRows.value.pop();
+};
 </script>
 
 <style lang="css" scoped>
