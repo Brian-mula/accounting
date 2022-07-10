@@ -1,6 +1,6 @@
 <template>
   <div class="flex">
-    <div class="w-56 h-screen">
+    <div class="w-56">
       <side-nav />
     </div>
     <div class="px-4 py-10 w-full bg-gray-100">

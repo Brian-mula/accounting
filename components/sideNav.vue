@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="h-full bg-blue-900">
     <div class="overflow-y-auto py-4 bg-blue-900 h-screen">
       <a
         href="https://flowbite.com/"
@@ -24,34 +24,34 @@
             <span class="ml-10 text-sm">Sales</span>
           </a>
         </li>
-         <li>
-          <nuxt-link to="/manageInvoices"
-            href="#"
+        <li>
+          <nuxt-link
+            to="/manageInvoices"
             class="flex items-center p-2 text-base font-normal text-gray-50 hover:bg-blue-700"
           >
             <span class="ml-10 text-sm">Manage Invoices</span>
-          </nuxt-link >
+          </nuxt-link>
         </li>
-         <li>
+        <li>
           <a
             href="#"
-            class="flex items-center p-2 text-base font-normal text-gray-50 hover:bg-blue-700 "
+            class="flex items-center p-2 text-base font-normal text-gray-50 hover:bg-blue-700"
           >
             <span class="ml-10 text-sm">Create Invoice</span>
           </a>
         </li>
-         <li>
+        <li>
           <a
             href="#"
-            class="flex items-center p-2 text-base font-normal text-gray-50 hover:bg-blue-700 "
+            class="flex items-center p-2 text-base font-normal text-gray-50 hover:bg-blue-700"
           >
             <span class="ml-10 text-sm">Recurrent Invoices</span>
           </a>
         </li>
-         <li>
+        <li>
           <a
             href="#"
-            class="flex items-center p-2 text-base font-normal text-gray-50 hover:bg-blue-700 "
+            class="flex items-center p-2 text-base font-normal text-gray-50 hover:bg-blue-700"
           >
             <span class="ml-10 text-sm">Client Payments</span>
           </a>
@@ -62,7 +62,7 @@
 </template>
 
 <script setup>
-const isActive=ref(true)
+const isActive = ref(true);
 </script>
 
 <style lang="scss" scoped></style>

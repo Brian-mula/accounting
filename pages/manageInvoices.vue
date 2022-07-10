@@ -1,5 +1,17 @@
 <template>
   <div>
+    <div class="flex justify-end items-end p-4">
+      <nuxt-link to="/newInvoice"
+        class="bg-blue-600 p-4 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
+      >
+        <img
+          src="~/assets/images/add-svgrepo-com.svg"
+          alt=""
+          class="h-6 w-6 mx-2"
+        />
+        <h4 class="text-white">New Invoice</h4>
+      </nuxt-link>
+    </div>
     <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
       <div class="flex justify-between items-center">
         <div class="w-80">
@@ -42,25 +54,31 @@
       </div>
     </form>
     <div class="mt-8 mb-4">
-    <div class="flex justify-between border-b-4 bg-white  rounded px-8 pt-6 pb-8  ">
-      <div>
-        <p class="font-normal text-gray-500">#00001-8/7/2022</p>
-        <h5 class="mb-1 mt-1 text-lg tracking-tight text-gray-700">Post Client</h5>
-      </div>
-      <div>
-      <h5 class="mb-1 mt-1 text-sm font-bold tracking-tight text-gray-700">Created</h5>
-       <p class="font-normal text-gray-500">8/7/2022</p>
-      </div>
-      <div>
-      <h5 class="mb-1 mt-1 text-lg  tracking-tight text-gray-700">Ksh.30000</h5>
-       <div class="bg-red-800 flex justify-center items-center rounded-sm">
-       <p class="font-normal text-gray-50">Unpaid</p>
-       </div>
+      <div
+        class="flex justify-between border-b-4 bg-white rounded px-8 pt-6 pb-8"
+      >
+        <div>
+          <p class="font-normal text-gray-500 text-sm">#00001-8/7/2022</p>
+          <h5 class="mb-1 mt-1 text-lg tracking-tight text-gray-700">
+            Post Client
+          </h5>
+        </div>
+        <div>
+          <h5 class="mb-1 mt-1 text-sm font-bold tracking-tight text-gray-700">
+            Created
+          </h5>
+          <p class="font-normal text-gray-500">8/7/2022</p>
+        </div>
+        <div>
+          <h5 class="mb-1 mt-1 text-lg tracking-tight text-gray-700">
+            Ksh.30000
+          </h5>
+          <div class="bg-red-800 flex justify-center items-center rounded-md">
+            <p class="font-normal text-gray-50 text-sm">Unpaid</p>
+          </div>
+        </div>
       </div>
     </div>
-    
-    </div>
-    
   </div>
 </template>
 
