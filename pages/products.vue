@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="flex justify-end items-end p-2">
-      <nuxt-link
-        to="/newInvoice"
+      <div
+        
         class="bg-blue-600 py-2 pr-2 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
       >
         <img
@@ -10,10 +10,43 @@
           alt=""
           class="h-6 w-6 mx-2"
         />
-        <h4 class="text-white">Add</h4>
-      </nuxt-link>
+        <Popover class="relative">
+          <PopoverButton
+            as="div"
+            class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none"
+            >Add</PopoverButton
+          >
+          <transition
+            enter-active-class="transition duration-200 ease-out"
+            enter-from-class="translate-y-1 opacity-0"
+            enter-to-class="translate-y-0 opacity-100"
+            leave-active-class="transition duration-150 ease-in"
+            leave-from-class="translate-y-0 opacity-100"
+            leave-to-class="translate-y-1 opacity-0"
+          >
+            <div class="bg-white">
+              <PopoverPanel class="absolute z-10 bg-white  p-4 rounded">
+                <div class="grid grid-cols-1">
+                  <nuxt-link
+                    to="/newProduct"
+                    class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                  >
+                     Product
+                  </nuxt-link>
+                  <nuxt-link
+                    to="recurrent"
+                    class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                  >
+                     Service
+                  </nuxt-link>
+                </div>
+              </PopoverPanel>
+            </div>
+          </transition>
+        </Popover>
+      </div>
     </div>
-    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <form class="bg-white shadow-md rounded px-8 pt-3 pb-4 mb-2">
       <h3 class="pt-2 pb-4 px-4 text-lg text-gray-500">Search</h3>
       <div class="grid grid-cols-3 gap-4">
         <div class="w-80">
@@ -104,7 +137,9 @@
 
           <p class="font-normal text-gray-500 text-sm">Barcode</p>
         </div>
-        <div class="bg-green-600 flex justify-center items-center rounded-md h-6">
+        <div
+          class="bg-green-600 flex justify-center items-center rounded-md h-6"
+        >
           <span class="text-sm font-bold tracking-tight text-white px-1 py-0">
             Active
           </span>
@@ -113,13 +148,14 @@
           <h5 class="mb-1 mt-1 text-lg tracking-tight text-purple-700">
             Ksh.30000
           </h5>
-          
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { Popover, PopoverButton, PopoverPanel } from "@headlessui/vue";
+</script>
 
 <style lang="scss" scoped></style>
