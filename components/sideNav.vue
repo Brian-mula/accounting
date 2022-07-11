@@ -9,12 +9,12 @@
       </a>
       <ul class="space-y-2 pt-8">
         <li>
-          <a
-            href="#"
+          <nuxt-link
+            to="/"
             class="flex items-center p-2 text-base font-normal text-gray-50 hover:bg-blue-700 bg-blue-700"
           >
             <span class="ml-10 text-sm">Dashboard</span>
-          </a>
+          </nuxt-link>
         </li>
         <li>
           <a
@@ -41,12 +41,12 @@
           </a>
         </li>
         <li>
-          <a
+          <nuxt-link to="recurrent"
             href="#"
             class="flex items-center p-2 text-base font-normal text-gray-50 hover:bg-blue-700"
           >
             <span class="ml-10 text-sm">Recurrent Invoices</span>
-          </a>
+          </nuxt-link>
         </li>
         <li>
           <a
