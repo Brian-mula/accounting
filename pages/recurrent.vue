@@ -89,26 +89,51 @@
         </thead>
         <tbody>
           <tr
-            class="bg-white border-b hover:bg-gray-50 "
+            v-for="(recurrent, index) in recurrents"
+            :key="index"
+            class="bg-white border-b hover:bg-gray-50"
           >
             <td class="w-4 p-4">
               <div class="flex items-center">
                 <input
                   id="checkbox-table-1"
                   type="checkbox"
-                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 "
+                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2"
                 />
                 <label for="checkbox-table-1" class="sr-only">checkbox</label>
               </div>
             </td>
-            <td class="px-6 py-4">1</td>
-            <td class="px-6 py-4">Power</td>
-            <td class="px-6 py-4">Post client</td>
-            <td class="px-6 py-4">1/01/2022</td>
-            <td class="px-6 py-4">1</td>
-            <td class="px-6 py-4">Ksh. 200</td>
-            <td class="px-6 py-4">1 month</td>
-            <td class="px-6 py-4">Edit</td>
+            <td class="px-6 py-4">{{ index + 1 }}</td>
+            <td class="px-6 py-4">{{ recurrent.name }}</td>
+            <td class="px-6 py-4">{{ recurrent.client_name }}</td>
+            <td class="px-6 py-4">{{ recurrent.next_date }}</td>
+            <td class="px-6 py-4">{{ recurrent.generated }}</td>
+            <td class="px-6 py-4">Ksh. {{ recurrent.total }}</td>
+            <td class="px-6 py-4">{{ recurrent.every }}</td>
+            <td class="px-6 py-4">
+              <div class="inline-flex rounded-md shadow-sm" role="group">
+                <button
+                  type="button"
+                  class="py-2 px-3 text-sm font-medium text-gray-900 bg-transparent rounded-l-lg border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+                >
+                   <img
+                    src="~/assets/images/pencil.png"
+                    alt=""
+                    class="h-6 w-6 mx-2"
+                  />
+                </button>
+                <button
+                  type="button"
+                  class="py-2 px-4 text-sm font-medium text-gray-900 bg-transparent border-t border-b border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+                >
+                  <img
+                    src="~/assets/images/delete.png"
+                    alt=""
+                    class="h-6 w-6 mx-2"
+                  />
+                </button>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -116,6 +141,33 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const recurrents = ref([
+  {
+    name: "Power",
+    client_name: "KPLC",
+    next_date: "12/2/2022",
+    generated: 1,
+    total: 200,
+    every: "1 month",
+  },
+  {
+    name: "Water",
+    client_name: "City council",
+    next_date: "30/2/2022",
+    generated: 1,
+    total: 250,
+    every: "1 month",
+  },
+  {
+    name: "Internet",
+    client_name: "Zuku",
+    next_date: "12/5/2022",
+    generated: 1,
+    total: 3900,
+    every: "1 month",
+  },
+]);
+</script>
 
 <style lang="scss" scoped></style>

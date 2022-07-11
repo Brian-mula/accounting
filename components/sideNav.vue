@@ -17,44 +17,95 @@
           </nuxt-link>
         </li>
         <li>
-          <a
-            href="#"
-            class="flex items-center p-2 text-base font-normal text-gray-50 hover:bg-blue-700"
-          >
-            <span class="ml-10 text-sm">Sales</span>
-          </a>
+          <Popover class="relative">
+            <PopoverButton as="div" 
+              class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none "
+              >Sales</PopoverButton
+            >
+            <transition
+              enter-active-class="transition duration-200 ease-out"
+              enter-from-class="translate-y-1 opacity-0"
+              enter-to-class="translate-y-0 opacity-100"
+              leave-active-class="transition duration-150 ease-in"
+              leave-from-class="translate-y-0 opacity-100"
+              leave-to-class="translate-y-1 opacity-0"
+            >
+              <div class="bg-white">
+                <PopoverPanel class="absolute z-10 bg-white w-full p-4 rounded">
+                  <div class="grid grid-cols-1">
+                    <nuxt-link
+                      to="/manageInvoices"
+                      class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                    >
+                      Manage Invoices
+                    </nuxt-link>
+                    <nuxt-link
+                      to="recurrent"
+                      class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                    >
+                      Recurrent Invoices
+                    </nuxt-link>
+                     <nuxt-link
+                      to="recurrent"
+                      class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                    >
+                      Create Invoice
+                    </nuxt-link>
+                    
+                  </div>
+
+                  <img src="/solutions.jpg" alt="" />
+                </PopoverPanel>
+              </div>
+            </transition>
+          </Popover>
         </li>
         <li>
-          <nuxt-link
-            to="/manageInvoices"
-            class="flex items-center p-2 text-base font-normal text-gray-50 hover:bg-blue-700"
-          >
-            <span class="ml-10 text-sm">Manage Invoices</span>
-          </nuxt-link>
+          <Popover class="relative">
+            <PopoverButton as="div" 
+              class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none "
+              >Inventory</PopoverButton
+            >
+            <transition
+              enter-active-class="transition duration-200 ease-out"
+              enter-from-class="translate-y-1 opacity-0"
+              enter-to-class="translate-y-0 opacity-100"
+              leave-active-class="transition duration-150 ease-in"
+              leave-from-class="translate-y-0 opacity-100"
+              leave-to-class="translate-y-1 opacity-0"
+            >
+              <div class="bg-white">
+                <PopoverPanel class="absolute z-10 bg-white w-full p-4 rounded">
+                  <div class="grid grid-cols-1">
+                    <nuxt-link
+                      to="/products"
+                      class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                    >
+                      Products & Services
+                    </nuxt-link>
+                    <nuxt-link
+                      to="recurrent"
+                      class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                    >
+                      Price List
+                    </nuxt-link>
+                     <nuxt-link
+                      to="recurrent"
+                      class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                    >
+                       Requisitions
+                    </nuxt-link>
+                    
+                  </div>
+
+                  
+                </PopoverPanel>
+              </div>
+            </transition>
+          </Popover>
         </li>
         <li>
-          <a
-            href="#"
-            class="flex items-center p-2 text-base font-normal text-gray-50 hover:bg-blue-700"
-          >
-            <span class="ml-10 text-sm">Create Invoice</span>
-          </a>
-        </li>
-        <li>
-          <nuxt-link to="recurrent"
-            href="#"
-            class="flex items-center p-2 text-base font-normal text-gray-50 hover:bg-blue-700"
-          >
-            <span class="ml-10 text-sm">Recurrent Invoices</span>
-          </nuxt-link>
-        </li>
-        <li>
-          <a
-            href="#"
-            class="flex items-center p-2 text-base font-normal text-gray-50 hover:bg-blue-700"
-          >
-            <span class="ml-10 text-sm">Client Payments</span>
-          </a>
+          
         </li>
       </ul>
     </div>
@@ -62,6 +113,7 @@
 </template>
 
 <script setup>
+import { Popover, PopoverButton, PopoverPanel } from "@headlessui/vue";
 const isActive = ref(true);
 </script>
 
