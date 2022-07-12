@@ -83,8 +83,8 @@
     </form>
      <div class="mt-4 bg-white pb-2 px-4">
       <h3 class="text-purple-900 px-4 pt-2 border-b-2">Results</h3>
-      <div class="flex justify-between items-center mb-2 border-b pb-2" >
-       
+      <div class="flex justify-between items-center mb-2 border-b pb-2" v-for="invoice in purchaseInvoices" :key="invoice.id">
+       <nuxt-link :to="{name:'purchasesInn-id',params:{id: invoice.id}}" >
         <div class="cursor-pointer">
           <p class="font-normal text-gray-700 text-md">Next Invention</p>
           <p class="font-normal text-gray-600 text-sm">
@@ -96,6 +96,7 @@
             Nairobi-central -50200
           </p>
         </div>
+        </nuxt-link>
        
         <div>
           <h5 class="mb-1 mt-1 text-sm font-bold tracking-tight text-gray-500">
@@ -122,6 +123,21 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const purchaseInvoices=ref([
+    {
+        id:123457,
+        state:"Central"
+    },
+     {
+        id:123458,
+        state:"Central"
+    },
+     {
+        id:123459,
+        state:"Central"
+    }
+])
+</script>
 
 <style lang="scss" scoped></style>
