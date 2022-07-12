@@ -18,7 +18,7 @@
 
               <div class="mb-4 mx-4">
                 <label class="block text-gray-700 text-sm mb-2" for="username">
-                  Item SKU:
+                  Service SKU:
                 </label>
                 <input
                   class="shadow appearance-none border rounded w-40 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -50,26 +50,10 @@
                   </select>
                 </div>
               </div>
-              <div class="mb-4 w-72 mx-4">
-                <label class="block text-gray-700 text-sm mb-2" for="username">
-                  Brand:
-                </label>
-                <input
-                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
-                />
-              </div>
+              
               <!-- !end of category and brand -->
             </div>
-            <div class="mb-4 w-72">
-              <label class="block text-gray-700 text-sm mb-2" for="username">
-                Barcode:
-              </label>
-              <input
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
-                placeholder=""
-              />
-            </div>
+           
           </div>
         </div>
         <div class="bg-white m-2 h-min" id="rightCustome">
@@ -87,7 +71,7 @@
               </div>
               <div class="mb-4 mx-2">
                 <label class="block text-gray-700 text-sm mb-2" for="username">
-                  Selling Price.
+                  Unit Price.
                 </label>
                 <input
                   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -123,32 +107,6 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="w-full bg-white mt-2">
-        <h3 class="text-purple-900 text-sm px-4 pt-2">Inventory management</h3>
-        <div class="flex">
-          <div class="mb-4 mt-3 pl-4 w-96">
-            <label class="block text-gray-700 text-sm mb-2" for="username">
-              Initial stock level.
-            </label>
-            <input
-              type="number"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder=""
-            />
-          </div>
-
-          <div class="mb-4 mt-3 pl-4 w-96">
-            <label class="block text-gray-700 text-sm mb-2" for="username">
-              Low stock Threshold
-            </label>
-            <input
-              type="number"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder=""
-            />
           </div>
         </div>
       </div>
