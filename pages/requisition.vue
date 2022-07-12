@@ -34,7 +34,7 @@
                      Inbound
                   </nuxt-link>
                   <nuxt-link
-                    to="newService"
+                    to="/outbound"
                     class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
                   >
                      Outbound
