@@ -67,29 +67,31 @@
     </form>
     <div class="mt-4 bg-white pb-2 px-4">
       <h3 class="text-purple-900 px-4 pt-2 border-b-2">Results</h3>
-      <div class="flex justify-between items-center">
+      <div class="flex justify-between items-center mb-2 border-b pb-2" v-for="(resource,index) in requisition_resource" :key="index">
+       <nuxt-link :to="{name:'requisitions-id',params:{id:resource.id}}">
         <div class="cursor-pointer">
-          <p class="font-normal text-gray-500 text-sm">#00001-8/7/2022</p>
+          <p class="font-normal text-gray-500 text-sm">#{{resource.id}}-{{resource.date}}</p>
           <p class="font-normal text-gray-600 text-sm">
-            Inbound requisition
-            <span class="text-purple-900">Primary warehouse</span>
+           {{resource.type}}
+            <span class="text-purple-900">{{resource.warehouse}}</span>
           </p>
           <p class="font-normal text-gray-600 text-sm">
-            By: <span class="text-purple-900">Mulati Brian</span>
+            By: <span class="text-purple-900">{{resource.person}}</span>
           </p>
         </div>
+       </nuxt-link>
         <div>
           <h5 class="mb-1 mt-1 text-sm font-bold tracking-tight text-gray-500">
             Created
           </h5>
           <p class="font-normal text-gray-500 text-xs">8/7/2022</p>
           <p class="font-normal text-gray-500 text-xs">
-            This is requisition description
+            {{resource.description}}
           </p>
         </div>
         <div>
           <div class="bg-green-800 flex justify-center items-center rounded-md">
-            <p class="font-normal text-gray-50 text-sm px-3">Unpaid</p>
+            <p class="font-normal text-gray-50 text-sm px-3">{{resource.status}}</p>
           </div>
         </div>
       </div>
@@ -110,6 +112,35 @@ const requisitions = ref([
   "Purchase refund",
   "Manual transfer",
 ]);
+const requisition_resource=([
+    {
+        id:111111,
+        date:'8/2/3020',
+        type:'Inbound requisition',
+        warehouse:"Primary warehouse",
+        person:"Mulati Goddy",
+        description:"this is an inbound requisition",
+        status:"accepted"
+    },
+      {
+        id:111112,
+        date:'8/2/3020',
+        type:'Inbound requisition',
+        warehouse:"Primary warehouse",
+        person:"Mulati Brian",
+        description:"this is an inbound requisition",
+        status:"accepted"
+    },
+      {
+        id:111113,
+        date:'8/2/3020',
+        type:'Inbound requisition',
+        warehouse:"Primary warehouse",
+        person:"Mulati Abbigail",
+        description:"this is an inbound requisition",
+        status:"accepted"
+    }
+])
 </script>
 
 <style lang="scss" scoped></style>
