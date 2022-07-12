@@ -90,7 +90,7 @@
                       Price List
                     </nuxt-link>
                      <nuxt-link
-                      to="recurrent"
+                      to="requisition"
                       class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
                     >
                        Requisitions
