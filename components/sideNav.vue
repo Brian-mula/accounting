@@ -134,7 +134,7 @@
                       Purchase refunds
                     </nuxt-link>
                      <nuxt-link
-                      to="recurrent"
+                      to="manage_suppliers"
                       class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
                     >
                       Manage suppliers
