@@ -3,7 +3,7 @@
     <form>
       <div class="flex">
         <div class="m-2 bg-white" id="custome">
-          <h3 class="text-purple-900 px-4 pt-2">Item details</h3>
+          <h3 class="text-purple-900 px-4 pt-2 border">Item details</h3>
           <div class="px-4">
             <div class="flex">
               <div class="mb-4 w-96">
@@ -73,7 +73,7 @@
           </div>
         </div>
         <div class="bg-white m-2 h-min" id="rightCustome">
-          <h3 class="px-4 text-purple-900 text-sm py-2">Pricing details</h3>
+          <h3 class="px-4 text-purple-900 text-sm py-2 border">Pricing details</h3>
           <div class="px-4">
             <div class="flex">
               <div class="mb-4 mx-2">
@@ -127,7 +127,7 @@
         </div>
       </div>
       <div class="w-full bg-white mt-2">
-        <h3 class="text-purple-900 text-sm px-4 pt-2">Inventory management</h3>
+        <h3 class="text-purple-900 text-sm px-4 pt-2 border">Inventory management</h3>
         <div class="flex">
           <div class="mb-4 mt-3 pl-4 w-96">
             <label class="block text-gray-700 text-sm mb-2" for="username">

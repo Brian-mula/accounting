@@ -2,7 +2,7 @@
   <div class="w-full">
     <form class="">
       <div class="flex justify-between mb-4">
-        <div class="bg-white w-96">
+        <div class="bg-white w-96 h-min">
           <div class="mb-1 w-80 px-4">
             <label class="block text-gray-700 text-sm mb-2 pt-4" for="username">
               Method:
@@ -152,7 +152,7 @@
         </div>
       </div>
 
-      <div class="flex justify-center items-center">
+      <div class="flex justify-start items-center mb-2">
         <button
           type="button"
           class=" mt-6 inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
