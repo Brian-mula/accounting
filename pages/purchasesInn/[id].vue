@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-300">
+  <div class="bg-gray-100">
     <div class="bg-white px-4 py-3 my-5 mr-auto ml-auto mb-3" id="custome">
       <div class="flex justify-between">
         <div class="w-32 h-12 rounded-sm">
@@ -48,7 +48,7 @@
       </div>
       <div class="overflow-x-auto relative mt-8">
         <table class="w-full text-sm text-left border ">
-          <thead class="text-xs  font-thin bg-white">
+          <thead class="text-xs  font-thin bg-gray-200">
             <tr>
               <th scope="col" class="py-3 px-6 font-normal">Item</th>
               <th scope="col" class="py-3 px-6 font-normal">Details</th>

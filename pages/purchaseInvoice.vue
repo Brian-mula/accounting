@@ -1,5 +1,27 @@
 <template>
   <div>
+  <div class="flex justify-end items-end p-2">
+      <div
+        
+        class="bg-blue-600 py-2 pr-2 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
+      >
+        <img
+          src="~/assets/images/add-svgrepo-com.svg"
+          alt=""
+          class="h-6 w-6 mx-2"
+        />
+         <nuxt-link to="/new_purchase_invoice"
+        class="bg-blue-600 p-4 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
+      >
+        <img
+          src="~/assets/images/add-svgrepo-com.svg"
+          alt=""
+          class="h-6 w-6 mx-2"
+        />
+        <h4 class="text-white">New Puchase Invoice</h4>
+      </nuxt-link>
+      </div>
+    </div>
     <form class="bg-white shadow-md rounded px-8 pt-3 pb-4 mb-2">
       <h3 class="pt-2 pb-1 px-4 text-lg text-gray-500 border-b-2">Search</h3>
       <div class="grid grid-cols-3 gap-6 mt-2">
