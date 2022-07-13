@@ -105,7 +105,92 @@
           </Popover>
         </li>
         <li>
-          
+          <Popover class="relative">
+            <PopoverButton as="div" 
+              class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none "
+              >Purchases</PopoverButton
+            >
+            <transition
+              enter-active-class="transition duration-200 ease-out"
+              enter-from-class="translate-y-1 opacity-0"
+              enter-to-class="translate-y-0 opacity-100"
+              leave-active-class="transition duration-150 ease-in"
+              leave-from-class="translate-y-0 opacity-100"
+              leave-to-class="translate-y-1 opacity-0"
+            >
+              <div class="bg-white">
+                <PopoverPanel class="absolute z-10 bg-white w-full p-4 rounded">
+                  <div class="grid grid-cols-1">
+                    <nuxt-link
+                      to="/purchaseInvoice"
+                      class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                    >
+                      Purchase invoices
+                    </nuxt-link>
+                    <nuxt-link
+                      to="/purchase_refunds"
+                      class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                    >
+                      Purchase refunds
+                    </nuxt-link>
+                     <nuxt-link
+                      to="manage_suppliers"
+                      class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                    >
+                      Manage suppliers
+                    </nuxt-link>
+                    
+                  </div>
+
+                
+                </PopoverPanel>
+              </div>
+            </transition>
+          </Popover>
+        </li>
+        <li>
+           <Popover class="relative">
+            <PopoverButton as="div" 
+              class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none "
+              >Finance</PopoverButton
+            >
+            <transition
+              enter-active-class="transition duration-200 ease-out"
+              enter-from-class="translate-y-1 opacity-0"
+              enter-to-class="translate-y-0 opacity-100"
+              leave-active-class="transition duration-150 ease-in"
+              leave-from-class="translate-y-0 opacity-100"
+              leave-to-class="translate-y-1 opacity-0"
+            >
+              <div class="bg-white">
+                <PopoverPanel class="absolute z-10 bg-white w-full p-4 rounded">
+                  <div class="grid grid-cols-1">
+                    <nuxt-link
+                      to="/expenses"
+                      class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                    >
+                      Expenses
+                    </nuxt-link>
+                    <nuxt-link
+                      to="/expenses"
+                      class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                    >
+                      Incomes
+                    </nuxt-link>
+                     <nuxt-link
+                      to="manage_suppliers"
+                      class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                    >
+                      Treasuries & bank
+                    </nuxt-link>
+                    
+                  </div>
+
+                
+                </PopoverPanel>
+              </div>
+            </transition>
+          </Popover>
         </li>
       </ul>
     </div>

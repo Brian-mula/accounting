@@ -1,5 +1,51 @@
 <template>
   <div>
+  <div class="flex justify-end items-end p-2">
+      <div
+        
+        class="bg-blue-600 py-2 pr-2 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
+      >
+        <img
+          src="~/assets/images/add-svgrepo-com.svg"
+          alt=""
+          class="h-6 w-6 mx-2"
+        />
+        <Popover class="relative">
+          <PopoverButton
+            as="div"
+            class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none"
+            >Add</PopoverButton
+          >
+          <transition
+            enter-active-class="transition duration-200 ease-out"
+            enter-from-class="translate-y-1 opacity-0"
+            enter-to-class="translate-y-0 opacity-100"
+            leave-active-class="transition duration-150 ease-in"
+            leave-from-class="translate-y-0 opacity-100"
+            leave-to-class="translate-y-1 opacity-0"
+          >
+            <div class="bg-white">
+              <PopoverPanel class="absolute z-10 bg-white  p-2 rounded">
+                <div class="grid grid-cols-1">
+                  <nuxt-link
+                    to="/inbound"
+                    class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                  >
+                     Inbound
+                  </nuxt-link>
+                  <nuxt-link
+                    to="/outbound"
+                    class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                  >
+                     Outbound
+                  </nuxt-link>
+                </div>
+              </PopoverPanel>
+            </div>
+          </transition>
+        </Popover>
+      </div>
+    </div>
     <form class="bg-white shadow-md rounded px-8 pt-3 pb-4 mb-2">
       <h3 class="pt-2 pb-1 px-4 text-lg text-gray-500 border-b-2">Search</h3>
       <div class="grid grid-cols-3 gap-6 mt-2">
@@ -100,6 +146,7 @@
 </template>
 
 <script setup>
+import { Popover, PopoverButton, PopoverPanel } from "@headlessui/vue";
 const requisitions = ref([
   "Inbound requisition",
   "Outbound requisition",
