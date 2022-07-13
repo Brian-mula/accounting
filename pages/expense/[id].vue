@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-white mt-10">
+    <div class="bg-gray-50 mt-10">
       <ul
         class="nav nav-tabs flex flex-col md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4"
         id="tabs-tab"
@@ -35,27 +35,29 @@
               <td class="text-gray-500 text-sm font-normal px-6">00001</td>
             </tr>
             <tr>
-         <th class="text-purple-600 pr-5-">Description:</th>
-         <td class="text-gray-500 text-sm font-normal px-6">It was used to pay electricity</td>
-         </tr>
-         <tr>
-         <th class="text-purple-600 pr-5-">Amount:</th>
-         <td class="text-gray-500 text-sm font-normal px-6">Ksh. 650</td>
-         </tr>
-         <tr>
-         <th class="text-purple-600 pr-5-">Treasury:</th>
-         <td class="text-gray-500 text-sm font-normal px-6">Main treasury</td>
-         </tr>
+              <th class="text-purple-600 pr-5-">Description:</th>
+              <td class="text-gray-500 text-sm font-normal px-6">
+                It was used to pay electricity
+              </td>
+            </tr>
+            <tr>
+              <th class="text-purple-600 pr-5-">Amount:</th>
+              <td class="text-gray-500 text-sm font-normal px-6">Ksh. 650</td>
+            </tr>
+            <tr>
+              <th class="text-purple-600 pr-5-">Treasury:</th>
+              <td class="text-gray-500 text-sm font-normal px-6">
+                Main treasury
+              </td>
+            </tr>
           </table>
         </div>
         <div
           v-if="voucher"
-          class="tab-pane fade"
-          id="tabs-profile"
-          role="tabpanel"
-          aria-labelledby="tabs-profile-tab"
+          class="tab-pane fade px-4"
+        
         >
-          Tab 2 content
+          <expense-receipt/>
         </div>
       </div>
     </div>
