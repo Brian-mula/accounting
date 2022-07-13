@@ -1,5 +1,17 @@
 <template>
     <div>
+     <div class="flex justify-end items-end p-3">
+      <nuxt-link to="/new_supplier"
+        class="bg-blue-600 p-2 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
+      >
+        <img
+          src="~/assets/images/add-svgrepo-com.svg"
+          alt=""
+          class="h-5 w-5 mx-2"
+        />
+        <h4 class="text-white">New Supplier</h4>
+      </nuxt-link>
+    </div>
     <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
     <h3 class="pt-2 pb-4 px-4 text-lg text-gray-500">Search</h3>
       <div class="flex items-center">
