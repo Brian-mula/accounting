@@ -2,44 +2,41 @@
   <div>
     <div class="flex justify-between items-center mb-4">
       <div class="flex justify-center w-80 cursor-pointer">
-        <div class="flex justify-center p-6 rounded-md shadow-lg bg-white w-full">
+        <div
+          class="flex justify-center p-6 rounded-md shadow-lg bg-white w-full"
+        >
           <div>
-          <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">
-            Last 7 days
-          </h5>
-          <p class="text-gray-700 text-base mb-4">
-            Ksh. 3000000
-          </p>
+            <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">
+              Last 7 days
+            </h5>
+            <p class="text-gray-700 text-base mb-4">Ksh. 3000000</p>
           </div>
-         
         </div>
       </div>
 
       <div class="flex justify-center w-80 cursor-pointer">
-        <div class=" p-6 rounded-md shadow-lg bg-white w-full flex justify-center">
+        <div
+          class="p-6 rounded-md shadow-lg bg-white w-full flex justify-center"
+        >
           <div>
-          <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">
-            Last 30 days
-          </h5>
-          <p class="text-gray-700 text-base mb-4">
-            Ksh. 3000000
-          </p>
+            <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">
+              Last 30 days
+            </h5>
+            <p class="text-gray-700 text-base mb-4">Ksh. 3000000</p>
           </div>
-         
         </div>
       </div>
 
       <div class="flex justify-center w-80 cursor-pointer">
-        <div class="flex justify-center p-6 rounded-md shadow-lg bg-white w-full">
+        <div
+          class="flex justify-center p-6 rounded-md shadow-lg bg-white w-full"
+        >
           <div>
-          <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">
-            Last year
-          </h5>
-          <p class="text-gray-700 text-base mb-4">
-            Ksh. 3000000
-          </p>
+            <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">
+              Last year
+            </h5>
+            <p class="text-gray-700 text-base mb-4">Ksh. 3000000</p>
           </div>
-         
         </div>
       </div>
     </div>
@@ -99,29 +96,45 @@
         </div>
       </div>
     </form>
-     <h3 class="bg-white text-gray-500 text-sm p-4 mt-4">Results</h3>
-      <div class="mt-8 mb-4">
-      <div
-        class="flex justify-between items-center border-b-4 bg-white rounded px-8 pt-3 pb-4"
-      >
-        <div>
-          <p class="font-normal text-gray-500 text-sm">#00001-8/7/2022</p>
-          
-        </div>
-       
-        <div>
-          <h5 class="mb-1 mt-1 text-lg tracking-tight text-gray-700">
-            Ksh.30000
-          </h5>
-          <div class="bg-red-800 flex justify-center items-center rounded-md">
-            <p class="font-normal text-gray-50 text-sm">Unpaid</p>
+
+    <div class="mt-8 mb-4 bg-white">
+      <h3 class="bg-white text-gray-500 text-sm border px-4 py-2 mt-2">
+        Results
+      </h3>
+      <div v-for="(expense, index) in expenses" :key="index">
+        <nuxt-link
+          :to="{ name: 'expense-id', params: { id: expense.id } }"
+          class="flex justify-between items-center rounded px-8 pt-2 pb-2"
+        >
+          <div>
+            <h5 class="mb-1 mt-1 text-md tracking-tight text-gray-700">
+              {{ expense.category }}
+            </h5>
+            <p class="font-normal text-gray-500 text-sm">#00001-8/7/2022</p>
           </div>
-        </div>
+
+          <div>
+            <h5 class="mb-1 mt-1 text-lg tracking-tight text-gray-700">
+              Ksh.30000
+            </h5>
+          </div>
+        </nuxt-link>
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const expenses = ref([
+  {
+    id: 12345,
+    category: "Long term",
+  },
+  {
+    id: 12346,
+    category: "Short  term",
+  },
+]);
+</script>
 
 <style lang="scss" scoped></style>
