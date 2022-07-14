@@ -5,11 +5,7 @@
         
         class="bg-blue-600 py-2 pr-2 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
       >
-        <img
-          src="~/assets/images/add-svgrepo-com.svg"
-          alt=""
-          class="h-6 w-6 mx-2"
-        />
+        
          <nuxt-link to="/new_purchase_invoice"
         class="bg-blue-600 p-4 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
       >
