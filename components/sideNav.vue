@@ -178,7 +178,7 @@
                       Incomes
                     </nuxt-link>
                      <nuxt-link
-                      to="manage_suppliers"
+                      to="/treasury"
                       class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
                     >
                       Treasuries & bank
