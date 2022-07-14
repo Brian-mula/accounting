@@ -37,7 +37,7 @@
             <tr>
               <th class="text-purple-600 pr-5-">Description:</th>
               <td class="text-gray-500 text-sm font-normal px-6">
-                It was used to pay electricity
+                Revenue from services offered to company clients
               </td>
             </tr>
             <tr>
@@ -57,7 +57,7 @@
           class="tab-pane fade px-4"
         
         >
-          <expense-receipt/>
+          <income-receipt/>
         </div>
       </div>
     </div>
