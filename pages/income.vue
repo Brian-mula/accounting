@@ -20,76 +20,76 @@
     <div class="flex justify-between items-center mb-4">
       <div class="flex justify-center w-80 cursor-pointer">
         <div
-          class="flex justify-center p-6 rounded-md shadow-lg bg-white w-full"
+          class="flex justify-center px-6 py-3 rounded-md shadow-md bg-white w-full"
         >
           <div>
             <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">
               Last 7 days
             </h5>
-            <p class="text-gray-700 text-base mb-4">Ksh. 3000000</p>
+            <p class="text-gray-700 text-base mb-2">Ksh. 3000000</p>
           </div>
         </div>
       </div>
 
       <div class="flex justify-center w-80 cursor-pointer">
         <div
-          class="p-6 rounded-md shadow-lg bg-white w-full flex justify-center"
+          class="px-6 py-3 rounded-md shadow-md bg-white w-full flex justify-center"
         >
           <div>
             <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">
               Last 30 days
             </h5>
-            <p class="text-gray-700 text-base mb-4">Ksh. 3000000</p>
+            <p class="text-gray-700 text-base mb-2">Ksh. 3000000</p>
           </div>
         </div>
       </div>
 
       <div class="flex justify-center w-80 cursor-pointer">
         <div
-          class="flex justify-center p-6 rounded-md shadow-lg bg-white w-full"
+          class="flex justify-center px-6 py-3 rounded-md shadow-md bg-white w-full"
         >
           <div>
             <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">
               Last year
             </h5>
-            <p class="text-gray-700 text-base mb-4">Ksh. 3000000</p>
+            <p class="text-gray-700 text-base mb-2">Ksh. 3000000</p>
           </div>
         </div>
       </div>
     </div>
-    <form class="bg-white shadow-md rounded px-8 pt-4 pb-8 mb-4">
-      <h3 class="pt-2 pb-2 px-4 text-lg text-gray-500">Search</h3>
+    <form class="bg-white shadow-md rounded px-8 pt-4 pb-3 mb-2">
+      <h3 class="pt-1 pb-2 px-4 text-lg text-gray-500">Search</h3>
       <div class="flex items-center justify-between">
         <div class="w-80 mx-4">
-          <div class="mb-4 w-full">
-            <label class="block text-gray-700 text-sm mb-2" for="username">
+          <div class="mb-2 w-full">
+            <label class="block text-gray-700 text-sm mb-1" for="username">
               Code:
             </label>
             <input
-              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="appearance-none border w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder=""
             />
           </div>
         </div>
         <div>
-          <div class="mb-4 w-80 mx-4">
-            <label class="block text-gray-700 text-sm mb-2" for="username">
+          <div class="mb-1 w-80 mx-4">
+            <label class="block text-gray-700 text-sm mb-1" for="username">
               Date.
             </label>
             <input
               type="date"
-              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="appearance-none border w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder=""
             />
           </div>
         </div>
 
-        <div class="mb-4 w-80 mx-4">
-          <label class="block text-gray-700 text-sm mb-2" for="username">
+        <div class="mb-1 w-80 mx-4">
+          <label class="block text-gray-700 text-sm mb-1" for="username">
             Category.
           </label>
           <input
-            class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            class="appearance-none border w-full py-1 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             placeholder=""
           />
         </div>
@@ -98,7 +98,7 @@
         <div class="mx-4">
           <button
             type="button"
-            class="inline-block px-6 py-2.5 bg-yellow-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-600 hover:shadow-lg focus:bg-yellow-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out"
+            class="inline-block px-6 py-2 bg-yellow-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-600 hover:shadow-lg focus:bg-yellow-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out"
           >
             Reset
           </button>
@@ -106,7 +106,7 @@
         <div class="mx-4">
           <button
             type="button"
-            class="inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
+            class="inline-block px-6 py-2 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
           >
             Search
           </button>
@@ -118,16 +118,16 @@
       <h3 class="bg-white text-gray-500 text-sm border px-4 py-2 mt-2">
         Results
       </h3>
-      <div v-for="(expense, index) in expenses" :key="index">
+      <div v-for="(income, index) in incomes" :key="index">
         <nuxt-link
-          :to="{ name: 'expense-id', params: { id: expense.id } }"
-          class="flex justify-between items-center rounded px-8 pt-2 pb-2"
+          :to="{ name: 'incomes-id', params: { id: income.id } }"
+          class="flex justify-between items-center rounded px-8 pt-1 pb-1"
         >
           <div>
-            <h5 class="mb-1 mt-1 text-md tracking-tight text-gray-700">
-              {{ expense.category }}
+            <h5 class="mb-1 mt-1 text-md tracking-tight text-purple-700">
+              Revenue - Taquana
             </h5>
-            <p class="font-normal text-gray-500 text-sm">#00001-8/7/2022</p>
+            <p class="font-normal text-gray-500 text-xs">#00001-8/7/2022 - Revenue from services offered to company clients</p>
           </div>
 
           <div>
@@ -142,7 +142,7 @@
 </template>
 
 <script setup>
-const expenses = ref([
+const incomes = ref([
   {
     id: 12345,
     category: "Long term",
