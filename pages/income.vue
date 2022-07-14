@@ -5,7 +5,7 @@
         class="bg-blue-600 py-2 pr-2 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
       >
         <nuxt-link
-          to="/new_expense"
+          to="/new_income"
           class="bg-blue-600 px-4 py-1 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
         >
           <img
@@ -13,7 +13,7 @@
             alt=""
             class="h-4 w-4 mx-2"
           />
-          <h4 class="text-white">New Expense</h4>
+          <h4 class="text-white">New Income</h4>
         </nuxt-link>
       </div>
     </div>
