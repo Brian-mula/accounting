@@ -64,14 +64,15 @@
     </form>
     <div class="mt-8 mb-4">
       <div
-        class="flex justify-between border-b-4 bg-white rounded px-8 pt-6 pb-8"
+      v-for="(invoice,index) in invoices" :key="index"
+        class="flex justify-between border-b-4 bg-white rounded px-8 pt-2 pb-4"
       >
-        <div>
+        <nuxt-link :to="{name:'manage-id',params:{id:invoice.id}}">
           <p class="font-normal text-gray-500 text-sm">#00001-8/7/2022</p>
           <h5 class="mb-1 mt-1 text-lg tracking-tight text-gray-700">
             Post Client
           </h5>
-        </div>
+        </nuxt-link>
         <div>
           <h5 class="mb-1 mt-1 text-sm font-bold tracking-tight text-gray-700">
             Created
@@ -91,6 +92,14 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const invoices=ref([
+  {
+    id:12345,
+    client_name:"Post client"
+
+  }
+])
+</script>
 
 <style lang="scss" scoped></style>
