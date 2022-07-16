@@ -1,19 +1,20 @@
 import { initializeApp } from "firebase/app";
 
 export default defineNuxtPlugin((nuxtApp) => {
+    const config = useRuntimeConfig()
   // Doing something with nuxtApp
   const firebaseConfig = {
-    apiKey: "AIzaSyDFlIZOkQYbKSMnJ50kKafAAVYEEvI5j2o",
+    apiKey: config.apiKey,
 
-    authDomain: "accounting-d269f.firebaseapp.com",
+    authDomain: config.authDomain,
 
-    projectId: "accounting-d269f",
+    projectId: config.projectId,
 
-    storageBucket: "accounting-d269f.appspot.com",
+    storageBucket: config.storageBucket,
 
-    messagingSenderId: "510889493202",
+    messagingSenderId: config.messagingSenderId,
 
-    appId: "1:510889493202:web:436095db35fe01ce63a30b",
+    appId: config.appId,
   };
 
   // Initialize Firebase
