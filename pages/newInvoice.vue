@@ -101,14 +101,16 @@
               v-for="tableRow in tableRows"
               :key="tableRow"
             >
-              <td class="px-6 py-4 w-20">
+              <td class="px-6 py-4 w-32">
                 <select
                   v-model="tableRow.item"
+                  @change="autofill($event)"
                   name=""
                   id=""
-                  class="block py-4 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+                  class="block bg-gray-200 py-2 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-gray-200 peer"
                 >
-                  <option value="">Item</option>
+                <option >select item</option>
+                  <option v-for="(item,index) in items" :key="index" :value="item.name">{{item.name}}</option>
                 </select>
               </td>
               <td class="px-6 py-4 w-80">
@@ -117,7 +119,7 @@
                   v-model="tableRow.description"
                 />
               </td>
-              <td class="px-6 py-4 w-20">
+              <td class="px-6 py-4 w-32">
                 <input
                   v-model="tableRow.unitPrice"
                   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -159,6 +161,7 @@
 
       <div class="flex justify-start items-center mb-2">
         <button
+        @click="handleSubmit"
           type="button"
           class=" mt-6 inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
         >
@@ -176,11 +179,23 @@ import "@vuepic/vue-datepicker/dist/main.css";
 const date = ref();
 const issueDate = ref();
 
+const nePrice=ref(null)
+const autofill=(event)=>{
+ console.log(event.target.value)
+ items.value.forEach(item => {
+  if(item.name==event.target.value){
+    console.log(tableRows.value.item)
+    tableRows.value.unitPrice=item.price
+    nePrice.value=item.price
+    console.log(tableRows.value.unitPrice)
+  }
+ });
+}
 const tableRows = ref([
   {
     item: "",
     description: "",
-    unitPrice: "",
+    unitPrice: '',
     quantity: "",
     subTotal: "",
     total: "",
@@ -200,8 +215,36 @@ const addNewRow = () => {
 const deleteRaw = () => {
   tableRows.value.pop();
 };
+// date auto population
 const myDate=ref('')
 myDate.value=new Date().toISOString().substring(0,10)
+
+// input autopopulation
+const items=ref([
+  {
+    name:'Truck',
+    price: 3000000,
+
+  },
+  {
+    name:'Gari',
+    price: 4000000,
+    
+  },
+  {
+    name:'Van',
+    price: 3500000,
+    
+  }
+])
+
+const handleSubmit=()=>{
+  tableRows.value.forEach(item=>{
+    console.log(item.item)
+  })
+}
+
+
 </script>
 
 <style lang="css" scoped>
