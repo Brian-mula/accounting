@@ -39,7 +39,7 @@
            Invoice Date: 12/4/2022
           </p>
           <span class="text-gray-600 text-sm p-0 m-0">From date: 12/5/2022</span>
-          <span class="text-gray-600 text-sm p-0 m-0">To date: 12/9 /2022</span>
+          <p class="text-gray-600 text-sm p-0 m-0">To date: 12/9 /2022</p>
         </div>
       </div>
       <div class="overflow-x-auto relative mt-8">
