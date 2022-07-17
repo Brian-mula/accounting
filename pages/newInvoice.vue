@@ -37,7 +37,7 @@
                 Invoice Number:
               </label>
               <input
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                class=" appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder=""
               />
             </div>
@@ -50,22 +50,27 @@
               </div>
             </div>
             <div class="mb-4 w-96 px-4">
-              <label class="block text-gray-700 text-sm mb-2" for="username">
+              <label class="block text-gray-700 text-sm mb-1" for="username">
                 Issue Date:
               </label>
               <div class="flex">
-                <Datepicker v-model="issueDate"></Datepicker>
+                <!-- <Datepicker v-model="issueDate"></Datepicker> -->
+                 <input
+                 v-model="myDate"
+                class=" appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder=""
+              />
               </div>
             </div>
-            <div class="mb-1 w-80 px-4">
+            <div class="mb-1 w-96 px-4">
               <label
-                class="block text-gray-700 text-sm mb-2 pt-4"
+                class="block text-gray-700 text-sm mb-1 pt-2"
                 for="username"
               >
                 Payment terms:
               </label>
               <input
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                class=" appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder=""
               />
             </div>
@@ -195,6 +200,8 @@ const addNewRow = () => {
 const deleteRaw = () => {
   tableRows.value.pop();
 };
+const myDate=ref('')
+myDate.value=new Date().toISOString().substring(0,10)
 </script>
 
 <style lang="css" scoped>
