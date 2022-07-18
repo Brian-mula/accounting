@@ -13,7 +13,7 @@
         <Popover class="relative">
           <PopoverButton
             as="div"
-            class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none"
+            class="pl-10 flex items-center p-1 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none"
             >Add</PopoverButton
           >
           <transition
@@ -51,11 +51,11 @@
       <div class="grid grid-cols-3 gap-4">
         <div class="w-80">
           <div class="mb-4 w-full">
-            <label class="block text-gray-700 text-sm mb-2" for="username">
+            <label class="block text-gray-700 text-sm mb-1" for="username">
               Category
             </label>
             <select
-              class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              class="form-select appearance-none block w-full px-3 py-1 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               aria-label="Default select example"
             >
               <option value="3">Any category</option>
