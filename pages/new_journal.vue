@@ -50,110 +50,121 @@
           </div>
         </div>
       </div>
-
-      <!-- !table -->
-      <div
-        class="relative overflow-x-auto shadow-md sm:rounded-lg bg-white mt-3"
-      >
-        <table
-          class="w-full text-sm text-right text-gray-500 dark:text-gray-400"
-        >
-          <thead class="bg-gray-50 text-left">
-            <tr>
-              <th scope="col" class="px-6 py-3 text-sm text-purple-800">
-                Account Name
-              </th>
-              <th
-                scope="col"
-                class="px-6 py-3 text-center text-purple-800"
-              >
-                Description
-              </th>
-              <th scope="col" class="px-6 py-3 text-purple-800">Debit</th>
-              <th scope="col" class="px-6 py-3 text-purple-800">Credit</th>
-            </tr>
-          </thead>
-          <tbody class="text-left bg-white">
-            <tr class=" border-b">
-              <td class="px-6 py-4 border-r">
-                <input
-                  placeholder="search"
-                  type="text"
-                  list="cars"
-                  class="bg-yellow-400 appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                />
-                <datalist
-                  id="cars"
-                  class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                >
-                  <option>Volvo</option>
-                  <option>Saab</option>
-                  <option>Mercedes</option>
-                  <option>Audi</option>
-                </datalist>
-              </td>
-              <td class="px-6 py-4 border-r">
-                <textarea class="w-full border border-slate-300" />
-              </td>
-              <td class="px-6 py-4 border-r">
-                <input
-                  class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
-                />
-              </td>
-              <td class="px-6 py-4 border-r">
-                <input
-                  class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
-                />
-              </td>
-            </tr>
-            <tr class=" border-b">
-              <td class="px-6 py-4 w-40 border-r">
-                <select
-                  name=""
-                  id=""
-                  class="block py-2 px-0 w-full text-sm text-gray-500 bg-transparent border border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-gray-200 peer"
-                >
-                  <option value="">Any account</option>
-                </select>
-              </td>
-              <td class="px-6 py-4 w-80 border-r">
-                <textarea class="w-full border border-slate-300" />
-              </td>
-              <td class="px-6 py-4 w-20 border-r">
-                <input
-                  class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
-                />
-              </td>
-              <td class="px-6 py-4 w-20 border-r">
-                <input
-                  class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
-                />
-              </td>
-            </tr>
-            <tr class="bg-white border-b">
-              <td class="px-6 py-4 w-20 border-r" colspan="2">Total</td>
-
-              <td class="px-6 py-4 w-20 border-r">
-                <input
-                  class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder="0.0"
-                />
-              </td>
-              <td class="px-6 py-4 w-20 border-r">
-                <input
-                  class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder="0.0"
-                />
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="mt-3" id="table_width">
+        <div class="flex bg-white border items-start">
+          <div
+            class="border-r px-4 py-3 text-sm text-purple-800 text-left w-60 flex items-start"
+          >
+            Account name
+          </div>
+          <div
+            class="border-r px-4 py-3 text-sm text-purple-800 w-60 flex items-start"
+          >
+            Description
+          </div>
+          <div
+            class="border-r px-4 py-3 text-sm text-purple-800 w-60 flex items-start"
+          >
+            Debit
+          </div>
+          <div
+            class="border-r px-4 py-3 text-sm text-purple-800 w-60 flex items-start"
+          >
+            Credit
+          </div>
+        </div>
+        <div class="flex bg-white border">
+          <div class="px-4 py-1 border-r w-60">
+            <input
+              placeholder="search"
+              type="text"
+              list="cars"
+              class="bg-yellow-400 appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+            <datalist
+              id="cars"
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            >
+              <option>Volvo</option>
+              <option>Saab</option>
+              <option>Mercedes</option>
+              <option>Audi</option>
+            </datalist>
+          </div>
+          <div class="px-4 py-1 border-r w-60">
+            <input
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder=""
+            />
+          </div>
+          <div class="px-4 py-1 border-r w-60">
+            <input
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder=""
+            />
+          </div>
+          <div class="px-4 py-1 border-r w-60">
+            <input
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder=""
+            />
+          </div>
+        </div>
+        <div class="flex bg-white border">
+          <div class="px-4 py-1 border-r w-60">
+            <input
+              placeholder="search"
+              type="text"
+              list="cars"
+              class="bg-yellow-400 appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+            <datalist
+              id="cars"
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            >
+              <option>Volvo</option>
+              <option>Saab</option>
+              <option>Mercedes</option>
+              <option>Audi</option>
+            </datalist>
+          </div>
+          <div class="px-4 py-1 border-r w-60">
+            <input
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder=""
+            />
+          </div>
+          <div class="px-4 py-1 border-r w-60">
+            <input
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder=""
+            />
+          </div>
+          <div class="px-4 py-1 border-r w-60">
+            <input
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder=""
+            />
+          </div>
+        </div>
+        <div class="flex">
+          <div class="bg-white px-2 cursor-pointer ml-80 flex">
+            <div class="px-4 py-2 border-r w-40">Total</div>
+            <div class="px-4 py-2 border-r w-60">
+            <input
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="0.0"
+            />
+            </div>
+            <div class="px-4 py-2 border-r w-56">
+            <input
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="0.0"
+            />
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- !table -->
       <div class="flex justify-start items-center mb-2">
         <button
           type="button"
@@ -204,5 +215,8 @@ const deleteRaw = () => {
 }
 #customs {
   width: 36rem;
+}
+#table_width {
+  width: 60rem;
 }
 </style>
