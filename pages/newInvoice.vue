@@ -238,10 +238,13 @@ const items=ref([
   }
 ])
 
+
 const handleSubmit=()=>{
-  tableRows.value.forEach(item=>{
-    console.log(item.item)
-  })
+ console.log(myDate.value)
+ console.log([{
+  'item ->':tableRows.value.item,
+  'description':tableRows.value.description
+ }])
 }
 
 

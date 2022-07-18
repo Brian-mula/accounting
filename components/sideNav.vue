@@ -210,7 +210,7 @@
                 <PopoverPanel class="absolute z-10 bg-white w-full p-4 rounded">
                   <div class="grid grid-cols-1">
                     <nuxt-link
-                      to="/products"
+                      to="/journal"
                       class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
                     >
                       Journal entries
