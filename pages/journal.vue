@@ -1,5 +1,17 @@
 <template>
   <div>
+  <div class="flex justify-end items-end p-4">
+      <nuxt-link to="/new_journal"
+        class="bg-blue-600 p-4 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
+      >
+        <img
+          src="~/assets/images/add-svgrepo-com.svg"
+          alt=""
+          class="h-6 w-6 mx-2"
+        />
+        <h4 class="text-white">New Journal</h4>
+      </nuxt-link>
+    </div>
     <form class="bg-white shadow-md rounded px-8 pt-3 pb-2 mb-1">
       <h3 class="pt-2 pb-1 mb-1 px-4 text-lg text-gray-500 border">Search</h3>
       <div class="grid grid-cols-3 gap-4">
