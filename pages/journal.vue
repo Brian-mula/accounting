@@ -1,10 +1,10 @@
 <template>
-    <div>
-        <form class="bg-white shadow-md rounded px-8 pt-3 pb-4 mb-2">
-      <h3 class="pt-2 pb-4 px-4 text-lg text-gray-500">Search</h3>
+  <div>
+    <form class="bg-white shadow-md rounded px-8 pt-3 pb-2 mb-1">
+      <h3 class="pt-2 pb-1 mb-1 px-4 text-lg text-gray-500 border">Search</h3>
       <div class="grid grid-cols-3 gap-4">
         <div class="w-80">
-          <div class="mb-4 w-full">
+          <div class="mb-2 w-full">
             <label class="block text-gray-700 text-sm mb-1" for="username">
               Account
             </label>
@@ -17,30 +17,30 @@
           </div>
         </div>
         <div>
-          <div class="mb-4">
+          <div class="mb-2">
             <label class="block text-gray-700 text-sm mb-2" for="username">
               Description
             </label>
             <input
-              class=" appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder=""
             />
           </div>
         </div>
         <div class="w-80">
-          <div class="mb-4 w-full">
+          <div class="mb-2 w-full">
             <label class="block text-gray-700 text-sm mb-2" for="status">
               Date
             </label>
-           <input
-           type="date"
-              class=" appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            <input
+              type="date"
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder=""
             />
           </div>
         </div>
         <div class="w-80">
-          <div class="mb-4 w-full">
+          <div class="mb-2 w-full">
             <label class="block text-gray-700 text-sm mb-2" for="status">
               Source
             </label>
@@ -49,16 +49,22 @@
               aria-label="Default select example"
             >
               <option selected>Any source</option>
-              <option v-for="(source,index) in sources" :key="index" :value="source">{{source}}</option>
+              <option
+                v-for="(source, index) in sources"
+                :key="index"
+                :value="source"
+              >
+                {{ source }}
+              </option>
             </select>
           </div>
         </div>
-        <div class="mb-4 w-80">
+        <div class="mb-2 w-80">
           <label class="block text-gray-700 text-sm mb-2" for="username">
             Number
           </label>
           <input
-            class=" appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             placeholder=""
           />
         </div>
@@ -82,30 +88,63 @@
         </div>
       </div>
     </form>
+     <div class="mt-8 mb-4">
+     <h3 class="pt-1 pb-1 mb-1 px-4 text-lg text-gray-500 border">Results</h3>
+      <div
+      v-for="(journal,index) in journals" :key="index"
+        class="flex justify-between border-b-4 bg-white rounded px-8 pt-2 pb-4"
+      >
+        <nuxt-link :to="{name:'journals-id',params:{id:journal.id}}">
+          <p class="font-normal text-gray-500 text-sm">#09-8/7/2022</p>
+          <h5 class="mb-1 mt-1 text-lg tracking-tight text-gray-700">
+            Expense #00001
+          </h5>
+        </nuxt-link>
+        <div class="flex items-center">
+          <h5 class="mb-1 mt-1 text-sm font-bold tracking-tight text-gray-700">
+            Long ==> Main
+          </h5>
+          
+        </div>
+        <div>
+          <h5 class="mb-1 mt-1 text-lg tracking-tight text-gray-700">
+            Ksh.30000
+          </h5>
+          <div class="bg-gray-200 flex justify-center items-center rounded-md">
+            <p class="font-normal text-gray-500 text-sm">auto</p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script setup>
-const source=ref('')
-const sources=ref([
-    'Manual journal',
-    'Invoice',
-    'Requisition',
-    'Stock transaction',
-    'Invoice payment',
-    'Income',
-    'Invoice sales cost',
-    'Refund receipt',
-    'Expense',
-    'Stock transfer',
-    'Purchase Refund',
-    'Asset',
-    'Asset operation',
-    'Asset depreciation',
-    'Purchase Invoice'
+const source = ref("");
+const journals=ref([
+  {
+    id:12345,
+    client_name:"Post client"
+
+  }
 ])
+const sources = ref([
+  "Manual journal",
+  "Invoice",
+  "Requisition",
+  "Stock transaction",
+  "Invoice payment",
+  "Income",
+  "Invoice sales cost",
+  "Refund receipt",
+  "Expense",
+  "Stock transfer",
+  "Purchase Refund",
+  "Asset",
+  "Asset operation",
+  "Asset depreciation",
+  "Purchase Invoice",
+]);
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
