@@ -1,144 +1,176 @@
 <template>
   <div>
-    <form >
-    <div class="flex">
-      <div class="bg-white h-min" id="custom">
-        <div class="w-full">
-          <div class="mb-4 w-full px-4 flex items-center py-2">
-            <label class="block text-gray-700 text-md mb-2 mr-3" for="status">
-              Date:
+    <form>
+      <div class="flex">
+        <div class="bg-white h-min" id="custom">
+          <div class="w-full">
+            <div class="mb-4 w-full px-4 flex items-center py-2">
+              <label class="block text-gray-700 text-md mb-2 mr-3" for="status">
+                Date:
+              </label>
+              <input
+                type="date"
+                class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder=""
+              />
+            </div>
+          </div>
+          <div class="w-full">
+            <div class="mb-4 w-full px-4 flex items-center py-2">
+              <label class="block text-gray-700 text-md mb-2 mr-3" for="status">
+                Number:
+              </label>
+              <input
+                type="number"
+                class="appearance-none border w-40 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="bg-white mx-3" id="customs">
+          <div class="mb-4 w-full mx-4 flex items-center py-2 px-4">
+            <label class="block text-gray-700 text-md mx-4 mb-2" for="username">
+              Description
             </label>
-             <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder=""
-          />
+            <input
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder=""
+            />
           </div>
-        </div>
-         <div class="w-full">
-          <div class="mb-4 w-full px-4 flex items-center py-2">
-            <label class="block text-gray-700 text-md mb-2 mr-3" for="status">
-              Number:
-            </label>
-             <input
-            class="shadow appearance-none border rounded w-40 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder=""
-          />
-          </div>
-        </div>
-      </div>
-      <div class="bg-white mx-3" id="custom">
-        <div class="mb-4 w-full mx-4 flex items-center py-2 px-4">
-          <label class="block text-gray-700 text-md mx-4 mb-2" for="username">
-            P.I Number:
-          </label>
-          <input
-            class="shadow appearance-none border rounded w-40 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder=""
-          />
-        </div>
-        <div class="mb-4 w-full mx-4 flex items-center py-2 px-4">
-          <label class="block text-gray-700 text-md mx-4 mb-2" for="username">
-            Date:
-          </label>
-          <div class="flex">
-            <Datepicker v-model="issueDate"></Datepicker>
-          </div>
-        </div>
-        <div class="mb-4 w-full mx-4 flex items-center py-2 px-4">
-          <label class="block text-gray-700 text-md mx-4 mb-2" for="username">
-            Payment terms:
-          </label>
-          <input
-            class="shadow appearance-none border rounded w-40 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="30 days"
-          />
-        </div>
-      </div>
-    </div>
 
-    <!-- !table -->
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg bg-white mt-3">
-      <table class="w-full text-sm text-right text-gray-500 dark:text-gray-400">
-        <thead class="bg-gray-50">
-          <tr>
-            <th scope="col" class="px-6 py-3 text-sm text-purple-800 w-20">
-              Item
-            </th>
-            <th scope="col" class="px-6 py-3 w-80 text-center">Description</th>
-            <th scope="col" class="px-6 py-3 w-20">Unit Price</th>
-            <th scope="col" class="px-6 py-3 w-20">Quantity</th>
-            <th scope="col" class="px-6 py-3 w-20">Subtotal</th>
-            <th scope="col" class="px-6 py-3 w-20">Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            class="bg-white border-b"
-            v-for="tableRow in tableRows"
-            :key="tableRow"
-          >
-            <td class="px-6 py-4 w-20">
-              <select
-                v-model="tableRow.item"
-                name=""
-                id=""
-                class="block py-4 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-gray-200 peer"
-              >
-                <option value="">Item</option>
-              </select>
-            </td>
-            <td class="px-6 py-4 w-80">
-              <textarea
-                class="w-full border border-slate-300"
-                v-model="tableRow.description"
-              />
-            </td>
-            <td class="px-6 py-4 w-20">
-              <input
-                v-model="tableRow.unitPrice"
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder=""
-              />
-            </td>
-            <td class="px-6 py-4 w-20">
-              <input
-                v-model="tableRow.quantity"
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder=""
-              />
-            </td>
-            <td class="px-6 py-4 w-20">Ksh.xxx</td>
-            <td class="px-6 py-4 w-20">Ksh.xxx</td>
-            <td class="px-6 py-4 w-20">
-              <div class="cursor-pointer" @click="deleteRaw">
-                <img
-                  src="~/assets/images/delete.png"
-                  alt=""
-                  class="h-6 w-6 mx-2"
-                />
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="bg-white shadow-md p-4 flex justify-between">
-        <div class="cursor-pointer" @click="addNewRow">
-          <img
-            src="~/assets/images/add-svgrepo-com.svg"
-            alt=""
-            class="h-6 w-6 mx-2"
-          />
+          <div class="mb-4 w-full mx-4 flex items-center py-2 px-4">
+            <label class="block text-gray-700 text-md mx-4 mb-2" for="username">
+              Attachment
+            </label>
+            <input
+              type="file"
+              class="appearance-none border w-40 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
         </div>
-        <div class="text-purple-800">Total: Ksh. xxx</div>
       </div>
-    </div>
-    <!-- !table -->
+      <div class="mt-3" id="table_width">
+        <div class="flex bg-white border items-start">
+          <div
+            class="border-r px-4 py-3 text-sm text-purple-800 text-left w-60 flex items-start"
+          >
+            Account name
+          </div>
+          <div
+            class="border-r px-4 py-3 text-sm text-purple-800 w-96 flex items-start"
+          >
+            Description
+          </div>
+          <div
+            class="border-r px-4 py-3 text-sm text-purple-800 w-60 flex items-start"
+          >
+            Debit
+          </div>
+          <div
+            class="border-r px-4 py-3 text-sm text-purple-800 w-60 flex items-start"
+          >
+            Credit
+          </div>
+        </div>
+        <div class="flex bg-white border">
+          <div class="px-4 py-1 border-r w-60">
+            <input
+              placeholder="search"
+              type="text"
+              list="cars"
+              class="bg-yellow-400 appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+            <datalist
+              id="cars"
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            >
+              <option>Volvo</option>
+              <option>Saab</option>
+              <option>Mercedes</option>
+              <option>Audi</option>
+            </datalist>
+          </div>
+          <div class="px-4 py-1 border-r w-96">
+            <input
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder=""
+            />
+          </div>
+          <div class="px-4 py-1 border-r w-60">
+            <input
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder=""
+            />
+          </div>
+          <div class="px-4 py-1 border-r w-60">
+            <input
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder=""
+            />
+          </div>
+        </div>
+        <div class="flex bg-white border">
+          <div class="px-4 py-1 border-r w-60">
+            <input
+              placeholder="search"
+              type="text"
+              list="cars"
+              class="bg-yellow-400 appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+            <datalist
+              id="cars"
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            >
+              <option>Volvo</option>
+              <option>Saab</option>
+              <option>Mercedes</option>
+              <option>Audi</option>
+            </datalist>
+          </div>
+          <div class="px-4 py-1 border-r w-96">
+            <input
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder=""
+            />
+          </div>
+          <div class="px-4 py-1 border-r w-60">
+            <input
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder=""
+            />
+          </div>
+          <div class="px-4 py-1 border-r w-60">
+            <input
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder=""
+            />
+          </div>
+        </div>
+        <div class="flex">
+          <div class="bg-white px-2 cursor-pointer ml-96 flex">
+            <div class="px-4 py-2 border-r w-56">Total</div>
+            <div class="px-4 py-2 border-r w-60">
+            <input
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="0.0"
+            />
+            </div>
+            <div class="px-4 py-2 border-r w-56">
+            <input
+              class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="0.0"
+            />
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="flex justify-start items-center mb-2">
         <button
           type="button"
-          class=" mt-6 inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
+          class="mt-6 inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
         >
-          Save Invoice
+          Save 
         </button>
       </div>
     </form>
@@ -180,5 +212,11 @@ const deleteRaw = () => {
 <style lang="css" scoped>
 #custom {
   width: 32rem;
+}
+#customs {
+  width: 36rem;
+}
+#table_width {
+  width: 68rem;
 }
 </style>

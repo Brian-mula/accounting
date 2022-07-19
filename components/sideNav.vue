@@ -216,13 +216,13 @@
                       Journal entries
                     </nuxt-link>
                     <nuxt-link
-                      to="recurrent"
+                      to="chart_of_accounts"
                       class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
                     >
                     Chart of Accounts
                     </nuxt-link>
                      <nuxt-link
-                      to="requisition"
+                      to="/assets"
                       class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
                     >
                        Assets
