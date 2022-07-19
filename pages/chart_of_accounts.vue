@@ -18,190 +18,213 @@
     <div class="mt-2 bg-white flex" id="custome-height">
       <div class="w-64 border">
         <div class="mt-5">
-        <div
-          class="flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
-        >
-          <span class="ml-10 text-sm">Assets</span>
-        </div>
-        <div
-          class=" flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
-        >
-          <span class="ml-10 text-sm">Revenue</span>
-        </div>
-        <div
-          class=" flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
-        >
-          <span class="ml-10 text-sm">Liabilities</span>
-        </div>
-        <div
-          class="flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
-        >
-          <span class="ml-10 text-sm">Expenses</span>
-        </div>
-        <div
-          class=" flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
-        >
-          <span class="ml-10 text-sm">Owner's equity</span>
-        </div>
+          <div
+            class="flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
+          >
+            <span class="ml-10 text-sm">Assets</span>
+          </div>
+          <div
+            class="flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
+          >
+            <span class="ml-10 text-sm">Revenue</span>
+          </div>
+          <div
+            class="flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
+          >
+            <span class="ml-10 text-sm">Liabilities</span>
+          </div>
+          <div
+            class="flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
+          >
+            <span class="ml-10 text-sm">Expenses</span>
+          </div>
+          <div
+            class="flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
+          >
+            <span class="ml-10 text-sm">Owner's equity</span>
+          </div>
         </div>
       </div>
 
       <div class="w-full">
-     <div v-if="!showAssets && !showliabilities && !showCapital && !showRevenue && !showExpenses">
-      <div @click="handleAssets" class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer">
-      <div>
-        <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
-          Assests
-        </h5>
-        <p class="font-normal text-gray-500 text-xs px-4">#1</p>
-      </div>
-      <div>
-        <h5
-          class="px-4 border-l-4 mb-1 mt-1 text-lg tracking-tight text-gray-700"
+        <div
+          v-if="
+            !showAssets &&
+            !showliabilities &&
+            !showCapital &&
+            !showRevenue &&
+            !showExpenses
+          "
         >
-          Ksh. 5000000
-        </h5>
-        <p class="font-normal text-gray-500 text-xs px-4">Debit</p>
-      </div>
-    </div>
-    <!-- !liabilities -->
-    <div @click="handleLiabilities" class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer">
-      <div>
-        <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
-          Liabilities
-        </h5>
-        <p class="font-normal text-gray-500 text-xs px-4">#2</p>
-      </div>
-      <div>
-        <h5
-          class="px-4 border-l-4 mb-1 mt-1 text-lg tracking-tight text-gray-700"
-        >
-          Ksh. 50000
-        </h5>
-        <p class="font-normal text-gray-500 text-xs px-4">Credit</p>
-      </div>
-    </div>
-    <!-- !Owner's equity -->
-    <div @click="handleCapital" class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer">
-      <div>
-        <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
-          Owner's equity
-        </h5>
-        <p class="font-normal text-gray-500 text-xs px-4">#3</p>
-      </div>
-      <div>
-        <h5
-          class="px-4 border-l-4 mb-1 mt-1 text-lg tracking-tight text-gray-700"
-        >
-          Ksh. 700000
-        </h5>
-        <p class="font-normal text-gray-500 text-xs px-4">Credit</p>
-      </div>
-    </div>
-    <!-- !Revenue -->
-    <div @click="handleRevenue" class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer">
-      <div>
-        <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
-          Revenue
-        </h5>
-        <p class="font-normal text-gray-500 text-xs px-4">#4</p>
-      </div>
-      <div>
-        <h5
-          class="px-4 border-l-4 mb-1 mt-1 text-lg tracking-tight text-gray-700"
-        >
-          Ksh. 200000
-        </h5>
-        <p class="font-normal text-gray-500 text-xs px-4">Credit</p>
-      </div>
-    </div>
-    <!-- !expenses -->
-    <div @click="handleExpenses" class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer">
-      <div>
-        <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
-          Expenses
-        </h5>
-        <p class="font-normal text-gray-500 text-xs px-4">#5</p>
-      </div>
-      <div>
-        <h5
-          class="px-4 border-l-4 mb-1 mt-1 text-lg tracking-tight text-gray-700"
-        >
-          Ksh. 40000
-        </h5>
-        <p class="font-normal text-gray-500 text-xs px-4">Debit</p>
-      </div>
-    </div>
-     </div>
-     <div v-if="showAssets">
-     <div v-for="asset in assetTypes" :key="asset.id" class="bg-gray-200 py-4 flex justify-between items-center hover:bg-gray-300 mt-1 cursor-pointer">
-      <div>
-        <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
-          {{asset.title}}
-        </h5>
-        <p class="font-normal text-gray-500 text-xs px-4">#11</p>
-      </div>
-      <div>
-        <h5
-          class="px-4 border-l-4 mb-1 mt-1 text-lg tracking-tight text-gray-700"
-        >
-          Ksh. 50000
-        </h5>
-        <p class="font-normal text-gray-500 text-xs px-4">Debit</p>
-      </div>
-    </div>
-   
-     </div>
-      <div v-if="showliabilities">
-     Liabilities
-     </div>
-     <div v-if="showCapital">
-     Owner's equity
-     </div>
-     <div v-if="showRevenue">
-     Revenue
-     </div>
-     <div v-if="showExpenses">
-     Expenses
-     </div>
+          <div
+            @click="handleAssets"
+            class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer"
+          >
+            <div>
+              <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
+                Assests
+              </h5>
+              <p class="font-normal text-gray-500 text-xs px-4">#1</p>
+            </div>
+            <div>
+              <h5
+                class="px-4 border-l-4 mb-1 mt-1 text-lg tracking-tight text-gray-700"
+              >
+                Ksh. 5000000
+              </h5>
+              <p class="font-normal text-gray-500 text-xs px-4">Debit</p>
+            </div>
+          </div>
+          <!-- !liabilities -->
+          <div
+            @click="handleLiabilities"
+            class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer"
+          >
+            <div>
+              <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
+                Liabilities
+              </h5>
+              <p class="font-normal text-gray-500 text-xs px-4">#2</p>
+            </div>
+            <div>
+              <h5
+                class="px-4 border-l-4 mb-1 mt-1 text-lg tracking-tight text-gray-700"
+              >
+                Ksh. 50000
+              </h5>
+              <p class="font-normal text-gray-500 text-xs px-4">Credit</p>
+            </div>
+          </div>
+          <!-- !Owner's equity -->
+          <div
+            @click="handleCapital"
+            class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer"
+          >
+            <div>
+              <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
+                Owner's equity
+              </h5>
+              <p class="font-normal text-gray-500 text-xs px-4">#3</p>
+            </div>
+            <div>
+              <h5
+                class="px-4 border-l-4 mb-1 mt-1 text-lg tracking-tight text-gray-700"
+              >
+                Ksh. 700000
+              </h5>
+              <p class="font-normal text-gray-500 text-xs px-4">Credit</p>
+            </div>
+          </div>
+          <!-- !Revenue -->
+          <div
+            @click="handleRevenue"
+            class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer"
+          >
+            <div>
+              <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
+                Revenue
+              </h5>
+              <p class="font-normal text-gray-500 text-xs px-4">#4</p>
+            </div>
+            <div>
+              <h5
+                class="px-4 border-l-4 mb-1 mt-1 text-lg tracking-tight text-gray-700"
+              >
+                Ksh. 200000
+              </h5>
+              <p class="font-normal text-gray-500 text-xs px-4">Credit</p>
+            </div>
+          </div>
+          <!-- !expenses -->
+          <div
+            @click="handleExpenses"
+            class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer"
+          >
+            <div>
+              <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
+                Expenses
+              </h5>
+              <p class="font-normal text-gray-500 text-xs px-4">#5</p>
+            </div>
+            <div>
+              <h5
+                class="px-4 border-l-4 mb-1 mt-1 text-lg tracking-tight text-gray-700"
+              >
+                Ksh. 40000
+              </h5>
+              <p class="font-normal text-gray-500 text-xs px-4">Debit</p>
+            </div>
+          </div>
+        </div>
+        <div v-if="showAssets">
+          <div
+            v-for="asset in assetTypes"
+            :key="asset.id"
+            class="bg-gray-200 py-4 flex justify-between items-center hover:bg-gray-300 mt-1 cursor-pointer"
+          >
+            <nuxt-link
+              :to="{ name: 'assets-id', params: { id: asset.id } }"
+              class="flex justify-between w-full"
+            >
+              <div>
+                <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
+                  {{ asset.title }}
+                </h5>
+                <p class="font-normal text-gray-500 text-xs px-4">#11</p>
+              </div>
+              <div>
+                <h5
+                  class="px-4 border-l-4 mb-1 mt-1 text-lg tracking-tight text-gray-700"
+                >
+                  Ksh. 50000
+                </h5>
+                <p class="font-normal text-gray-500 text-xs px-4">Debit</p>
+              </div>
+            </nuxt-link>
+          </div>
+        </div>
+        <div v-if="showliabilities">Liabilities</div>
+        <div v-if="showCapital">Owner's equity</div>
+        <div v-if="showRevenue">Revenue</div>
+        <div v-if="showExpenses">Expenses</div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-const showAssets=ref(false);
-const showliabilities=ref(false);
-const showCapital=ref(false);
-const showRevenue=ref(false);
-const showExpenses=ref(false);
+const showAssets = ref(false);
+const showliabilities = ref(false);
+const showCapital = ref(false);
+const showRevenue = ref(false);
+const showExpenses = ref(false);
 
-const assetTypes=ref([
-    {
-        id:11,
-        title:"Current Assets"
-    },
-    {
-        id:12,
-        title:"Fixed Assets"
-    },
-])
-const handleAssets=()=>{
-    showAssets.value=true
-    console.log('am turning to true')
-}
-const handleLiabilities=()=>{
-    showliabilities.value=true
-}
-const handleCapital=()=>{
-    showCapital.value=true
-}
-const handleRevenue=()=>{
-    showRevenue.value=true
-}
-const handleExpenses=()=>{
-    showExpenses.value=true
-}
+const assetTypes = ref([
+  {
+    id: 11,
+    title: "Current Assets",
+  },
+  {
+    id: 12,
+    title: "Fixed Assets",
+  },
+]);
+const handleAssets = () => {
+  showAssets.value = true;
+  console.log("am turning to true");
+};
+const handleLiabilities = () => {
+  showliabilities.value = true;
+};
+const handleCapital = () => {
+  showCapital.value = true;
+};
+const handleRevenue = () => {
+  showRevenue.value = true;
+};
+const handleExpenses = () => {
+  showExpenses.value = true;
+};
 </script>
 
 <style lang="css" scoped>
