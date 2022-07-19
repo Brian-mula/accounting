@@ -47,7 +47,8 @@
       </div>
 
       <div class="w-full">
-      <div class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer">
+     <div v-if="!showAssets && !showliabilities && !showCapital && !showRevenue && !showExpenses">
+      <div @click="handleAssets" class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer">
       <div>
         <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
           Assests
@@ -64,7 +65,7 @@
       </div>
     </div>
     <!-- !liabilities -->
-    <div class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer">
+    <div @click="handleLiabilities" class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer">
       <div>
         <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
           Liabilities
@@ -81,7 +82,7 @@
       </div>
     </div>
     <!-- !Owner's equity -->
-    <div class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer">
+    <div @click="handleCapital" class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer">
       <div>
         <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
           Owner's equity
@@ -98,7 +99,7 @@
       </div>
     </div>
     <!-- !Revenue -->
-    <div class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer">
+    <div @click="handleRevenue" class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer">
       <div>
         <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
           Revenue
@@ -115,7 +116,7 @@
       </div>
     </div>
     <!-- !expenses -->
-    <div class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer">
+    <div @click="handleExpenses" class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer">
       <div>
         <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
           Expenses
@@ -131,12 +132,50 @@
         <p class="font-normal text-gray-500 text-xs px-4">Debit</p>
       </div>
     </div>
+     </div>
+     <div v-if="showAssets">
+     assets
+     </div>
+      <div v-if="showliabilities">
+     Liabilities
+     </div>
+     <div v-if="showCapital">
+     Owner's equity
+     </div>
+     <div v-if="showRevenue">
+     Revenue
+     </div>
+     <div v-if="showExpenses">
+     Expenses
+     </div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const showAssets=ref(false);
+const showliabilities=ref(false);
+const showCapital=ref(false);
+const showRevenue=ref(false);
+const showExpenses=ref(false);
+const handleAssets=()=>{
+    showAssets.value=true
+    console.log('am turning to true')
+}
+const handleLiabilities=()=>{
+    showliabilities.value=true
+}
+const handleCapital=()=>{
+    showCapital.value=true
+}
+const handleRevenue=()=>{
+    showRevenue.value=true
+}
+const handleExpenses=()=>{
+    showExpenses.value=true
+}
+</script>
 
 <style lang="css" scoped>
 #custome-height {
