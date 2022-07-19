@@ -134,7 +134,23 @@
     </div>
      </div>
      <div v-if="showAssets">
-     assets
+     <div v-for="asset in assetTypes" :key="asset.id" class="bg-gray-200 py-4 flex justify-between items-center hover:bg-gray-300 mt-1 cursor-pointer">
+      <div>
+        <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
+          {{asset.title}}
+        </h5>
+        <p class="font-normal text-gray-500 text-xs px-4">#11</p>
+      </div>
+      <div>
+        <h5
+          class="px-4 border-l-4 mb-1 mt-1 text-lg tracking-tight text-gray-700"
+        >
+          Ksh. 50000
+        </h5>
+        <p class="font-normal text-gray-500 text-xs px-4">Debit</p>
+      </div>
+    </div>
+   
      </div>
       <div v-if="showliabilities">
      Liabilities
@@ -159,6 +175,17 @@ const showliabilities=ref(false);
 const showCapital=ref(false);
 const showRevenue=ref(false);
 const showExpenses=ref(false);
+
+const assetTypes=ref([
+    {
+        id:11,
+        title:"Current Assets"
+    },
+    {
+        id:12,
+        title:"Fixed Assets"
+    },
+])
 const handleAssets=()=>{
     showAssets.value=true
     console.log('am turning to true')
