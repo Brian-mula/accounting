@@ -163,7 +163,7 @@
             class="bg-gray-200 py-4 flex justify-between items-center hover:bg-gray-300 mt-1 cursor-pointer"
           >
             <nuxt-link
-              :to="{ name: 'assets-id', params: { id: asset.id } }"
+              :to="{ name: 'asset-id', params: { id: asset.id } }"
               class="flex justify-between w-full"
             >
               <div>
