@@ -58,7 +58,7 @@
             Account name
           </div>
           <div
-            class="border-r px-4 py-3 text-sm text-purple-800 w-60 flex items-start"
+            class="border-r px-4 py-3 text-sm text-purple-800 w-96 flex items-start"
           >
             Description
           </div>
@@ -91,7 +91,7 @@
               <option>Audi</option>
             </datalist>
           </div>
-          <div class="px-4 py-1 border-r w-60">
+          <div class="px-4 py-1 border-r w-96">
             <input
               class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder=""
@@ -128,7 +128,7 @@
               <option>Audi</option>
             </datalist>
           </div>
-          <div class="px-4 py-1 border-r w-60">
+          <div class="px-4 py-1 border-r w-96">
             <input
               class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder=""
@@ -148,8 +148,8 @@
           </div>
         </div>
         <div class="flex">
-          <div class="bg-white px-2 cursor-pointer ml-80 flex">
-            <div class="px-4 py-2 border-r w-40">Total</div>
+          <div class="bg-white px-2 cursor-pointer ml-96 flex">
+            <div class="px-4 py-2 border-r w-56">Total</div>
             <div class="px-4 py-2 border-r w-60">
             <input
               class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -170,7 +170,7 @@
           type="button"
           class="mt-6 inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
         >
-          Save Invoice
+          Save 
         </button>
       </div>
     </form>
@@ -217,6 +217,6 @@ const deleteRaw = () => {
   width: 36rem;
 }
 #table_width {
-  width: 60rem;
+  width: 68rem;
 }
 </style>
