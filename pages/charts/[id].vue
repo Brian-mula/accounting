@@ -1,11 +1,13 @@
 <template>
     <div>
-    Assests from charts of accounts
+    charts side
     </div>
 </template>
 
 <script setup>
-
+definePageMeta({
+  layout: "custome",
+});
 </script>
 
 <style lang="scss" scoped>
