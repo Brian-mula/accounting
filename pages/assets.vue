@@ -76,6 +76,29 @@
         </div>
       </div>
     </form>
+    <div class="mt-8 mb-4">
+      <div
+        class="flex justify-between border-b-4 bg-white rounded px-8 pt-2 pb-2 items-center"
+      >
+        <div>
+          <h5 class="mb-1 mt-1 text-lg tracking-tight text-gray-700">Truck</h5>
+
+          <p class="font-normal text-gray-500 text-sm">Barcode</p>
+        </div>
+        <div
+          class="bg-green-600 flex justify-center items-center rounded-md h-6"
+        >
+          <span class="text-sm font-bold tracking-tight text-white px-1 py-0">
+            Active
+          </span>
+        </div>
+        <div>
+          <h5 class="mb-1 mt-1 text-lg tracking-tight text-purple-700">
+            Ksh.30000
+          </h5>
+        </div>
+      </div>
+    </div>
     </div>
 </template>
 
