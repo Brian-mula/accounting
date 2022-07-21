@@ -1,6 +1,9 @@
 <template>
     <div >
     
+  <div class="flex">
+  <div class="w-64"></div>
+   <div>
    <div v-for="asset in current_assets" :key="asset.id" class="bg-gray-200 py-4 flex justify-between items-center hover:bg-gray-300 mt-1 cursor-pointer">
      <nuxt-link :to="{name:'current-id',params:{id: asset.id}}" class="flex justify-between w-full">
       <div>
@@ -19,6 +22,8 @@
       </div>
      </nuxt-link>
     </div>
+   </div>
+  </div>
     </div>
 </template>
 

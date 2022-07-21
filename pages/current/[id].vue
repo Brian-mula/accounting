@@ -1,7 +1,9 @@
 <template>
   <div>
+   <div class="flex">
+   <div class="w-64"></div>
     <div
-      class="bg-gray-300 py-4 flex justify-between items-center hover:bg-gray-300 mt-1 cursor-pointer"
+      class="bg-gray-300 w-full py-4 flex justify-between items-center hover:bg-gray-300 mt-1 cursor-pointer"
     >
       <div class="flex justify-between w-full">
         <div>
@@ -20,6 +22,7 @@
         </div>
       </div>
     </div>
+   </div>
   </div>
 </template>
 
