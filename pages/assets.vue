@@ -77,13 +77,15 @@
       </div>
     </form>
     <div class="mt-8 mb-4">
-      <div
+     <div v-for="asset in assets" :key="asset.id" >
+     <nuxt-link :to="{name:'details-id',params:{id: asset.id}}">
+      <div 
         class="flex justify-between border-b-4 bg-white rounded px-8 pt-2 pb-2 items-center"
       >
         <div>
           <h5 class="mb-1 mt-1 text-lg tracking-tight text-gray-700">Truck</h5>
 
-          <p class="font-normal text-gray-500 text-sm">Barcode</p>
+          <p class="font-normal text-gray-500 text-sm">Vehicles</p>
         </div>
         <div
           class="bg-green-600 flex justify-center items-center rounded-md h-6"
@@ -98,6 +100,8 @@
           </h5>
         </div>
       </div>
+     </nuxt-link>
+     </div>
     </div>
     </div>
 </template>
@@ -108,6 +112,12 @@ const statuses=ref([
     'Inactive',
     "Depreciated",
     'Sold'
+])
+const assets=ref([
+    {
+        id:123,
+        title:'Vehicles'
+    }
 ])
 </script>
 
