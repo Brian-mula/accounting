@@ -15,36 +15,8 @@
       </div>
     </div>
 
-    <div class="mt-2 bg-white flex" id="custome-height">
-      <div class="w-64 border">
-        <div class="mt-5">
-          <div
-            class="flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
-          >
-            <span class="ml-10 text-sm">Assets</span>
-          </div>
-          <div
-            class="flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
-          >
-            <span class="ml-10 text-sm">Revenue</span>
-          </div>
-          <div
-            class="flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
-          >
-            <span class="ml-10 text-sm">Liabilities</span>
-          </div>
-          <div
-            class="flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
-          >
-            <span class="ml-10 text-sm">Expenses</span>
-          </div>
-          <div
-            class="flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
-          >
-            <span class="ml-10 text-sm">Owner's equity</span>
-          </div>
-        </div>
-      </div>
+    <div class="mt-2 bg-white" id="custome-height">
+      
 
       <div class="w-full">
         <div
@@ -219,6 +191,9 @@
 </template>
 
 <script setup>
+definePageMeta({
+  layout: "custome",
+});
 const showAssets = ref(false);
 const showliabilities = ref(false);
 const showCapital = ref(false);

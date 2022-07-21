@@ -6,8 +6,8 @@
     <div class=" w-full bg-gray-100">
     <navbar1/>
     <div class="px-4 flex">
-    <div class="w-64">
-        inner sidebar
+    <div class="w-64 h-screen bg-white border">
+        <charts-of-aacounts-sidebar/>
     </div>
     <div class="w-full">
     <slot />
@@ -18,6 +18,7 @@
 </template>
 
 <script setup>
-import Navbar1 from '~~/components/navbar.vue';</script>
+import Navbar1 from '~~/components/navbar.vue';
+</script>
 
 <style lang="scss" scoped></style>
