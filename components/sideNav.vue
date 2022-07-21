@@ -236,6 +236,50 @@
             </transition>
           </Popover>
         </li>
+         <li>
+          <Popover class="relative">
+            <PopoverButton as="div" 
+              class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none "
+              >Clients</PopoverButton
+            >
+            <transition
+              enter-active-class="transition duration-200 ease-out"
+              enter-from-class="translate-y-1 opacity-0"
+              enter-to-class="translate-y-0 opacity-100"
+              leave-active-class="transition duration-150 ease-in"
+              leave-from-class="translate-y-0 opacity-100"
+              leave-to-class="translate-y-1 opacity-0"
+            >
+              <div class="bg-white">
+                <PopoverPanel class="absolute z-10 bg-white w-full p-4 rounded">
+                  <div class="grid grid-cols-1">
+                    <nuxt-link
+                      to="/manage_client"
+                      class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                    >
+                      Manage Clients
+                    </nuxt-link>
+                    <nuxt-link
+                      to="chart_of_accounts"
+                      class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                    >
+                    Add New Client
+                    </nuxt-link>
+                     <nuxt-link
+                      to="/assets"
+                      class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                    >
+                       Appointments
+                    </nuxt-link>
+                    
+                  </div>
+
+                  
+                </PopoverPanel>
+              </div>
+            </transition>
+          </Popover>
+        </li>
       </ul>
     </div>
   </div>
