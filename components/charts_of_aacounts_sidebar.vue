@@ -1,12 +1,12 @@
 <template>
     <div>
-    <div class="w-64 mr-4">
+    <div class="w-64">
         <div class="mt-5">
-          <div
+          <nuxt-lnk to="/charts_assets"
             class="flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
           >
             <span class="ml-10 text-sm">Assets</span>
-          </div>
+          </nuxt-lnk>
           <div
             class="flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
           >

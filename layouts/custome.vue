@@ -9,7 +9,7 @@
     <div class="w-64 h-screen bg-white border">
         <charts-of-aacounts-sidebar/>
     </div>
-    <div class="w-full">
+    <div class="w-full pl-4">
     <slot />
     </div>
     </div>
