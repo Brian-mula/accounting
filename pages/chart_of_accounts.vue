@@ -3,48 +3,20 @@
     <div class="bg-white py-4 flex justify-between items-center">
       <div>
         <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
-          Assests
+          Charts of accounts
         </h5>
       </div>
-      <div>
+      <!-- <div>
         <h5
           class="px-4 border-l-4 mb-1 mt-1 text-lg tracking-tight text-gray-700"
         >
           Ksh. 5000000
         </h5>
-      </div>
+      </div> -->
     </div>
 
-    <div class="mt-2 bg-white flex" id="custome-height">
-      <div class="w-64 border">
-        <div class="mt-5">
-          <div
-            class="flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
-          >
-            <span class="ml-10 text-sm">Assets</span>
-          </div>
-          <div
-            class="flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
-          >
-            <span class="ml-10 text-sm">Revenue</span>
-          </div>
-          <div
-            class="flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
-          >
-            <span class="ml-10 text-sm">Liabilities</span>
-          </div>
-          <div
-            class="flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
-          >
-            <span class="ml-10 text-sm">Expenses</span>
-          </div>
-          <div
-            class="flex items-center p-2 text-base font-normal text-gray-700 hover:bg-gray-200 bg-white cursor-pointer"
-          >
-            <span class="ml-10 text-sm">Owner's equity</span>
-          </div>
-        </div>
-      </div>
+    <div class="mt-2 bg-white" id="custome-height">
+      
 
       <div class="w-full">
         <div
@@ -58,7 +30,7 @@
         >
           <div
             @click="handleAssets"
-            class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer"
+            class="bg-gray-200 py-4 flex justify-between items-center hover:bg-gray-300 mt-1 cursor-pointer"
           >
             <div>
               <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
@@ -78,7 +50,7 @@
           <!-- !liabilities -->
           <div
             @click="handleLiabilities"
-            class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer"
+            class="bg-gray-200 py-4 flex justify-between items-center hover:bg-gray-300 mt-1 cursor-pointer"
           >
             <div>
               <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
@@ -98,7 +70,7 @@
           <!-- !Owner's equity -->
           <div
             @click="handleCapital"
-            class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer"
+            class="bg-gray-200 py-4 flex justify-between items-center hover:bg-gray-300 mt-1 cursor-pointer"
           >
             <div>
               <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
@@ -118,7 +90,7 @@
           <!-- !Revenue -->
           <div
             @click="handleRevenue"
-            class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer"
+            class="bg-gray-200 py-4 flex justify-between items-center hover:bg-gray-300 mt-1 cursor-pointer"
           >
             <div>
               <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
@@ -138,7 +110,7 @@
           <!-- !expenses -->
           <div
             @click="handleExpenses"
-            class="bg-white py-4 flex justify-between items-center hover:bg-gray-200 mt-1 cursor-pointer"
+            class="bg-gray-200 py-4 flex justify-between items-center hover:bg-gray-300 mt-1 cursor-pointer"
           >
             <div>
               <h5 class="px-4 mb-1 mt-1 text-lg tracking-tight text-gray-700">
@@ -219,6 +191,9 @@
 </template>
 
 <script setup>
+definePageMeta({
+  layout: "custome",
+});
 const showAssets = ref(false);
 const showliabilities = ref(false);
 const showCapital = ref(false);

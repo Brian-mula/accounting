@@ -142,6 +142,9 @@
 </template>
 
 <script setup>
+definePageMeta({
+  layout: "default",
+});
 const expenses = ref([
   {
     id: 12345,
