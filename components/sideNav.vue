@@ -266,7 +266,7 @@
                     Add New Client
                     </nuxt-link>
                      <nuxt-link
-                      to="/assets"
+                      to="/appointments"
                       class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
                     >
                        Appointments
