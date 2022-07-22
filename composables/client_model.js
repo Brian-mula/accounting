@@ -1,4 +1,4 @@
-class Client {
+ class Client {
   constructor(
     name,
     phone,
@@ -21,7 +21,7 @@ class Client {
     this.country = country;
   }
 }
-const clientConverter = {
+export const clientConverter = {
   toFirestore: (client) => {
     return {
       name: client.name,
