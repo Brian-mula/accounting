@@ -260,7 +260,7 @@
                       Manage Clients
                     </nuxt-link>
                     <nuxt-link
-                      to="chart_of_accounts"
+                      to="/new_client"
                       class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
                     >
                     Add New Client
