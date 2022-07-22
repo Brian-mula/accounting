@@ -32,7 +32,7 @@
       <div class="flex justify-between mt-10">
         <div class="">
           <div class="flex px-4 justify-between items-center">
-            <h5 class="mb-1 mt-1 text-lg tracking-tight font-normal mr-6">
+            <h5 class="mb-1 mt-1 text-sm tracking-tight font-normal mr-6">
               Identifier
             </h5>
             <p
@@ -42,7 +42,7 @@
             </p>
           </div>
           <div class="flex px-4 justify-between items-center">
-            <h5 class="mb-1 mt-1 text-lg tracking-tight font-normal mr-6">
+            <h5 class="mb-1 mt-1 text-sm tracking-tight font-normal mr-6">
               Name
             </h5>
             <p
@@ -52,7 +52,7 @@
             </p>
           </div>
           <div class="flex px-4 justify-between items-center">
-            <h5 class="mb-1 mt-1 text-lg tracking-tight font-normal mr-6">
+            <h5 class="mb-1 mt-1 text-sm tracking-tight font-normal mr-6">
               Description
             </h5>
             <p
@@ -62,7 +62,7 @@
             </p>
           </div>
           <div class="flex px-4 justify-between items-center">
-            <h5 class="mb-1 mt-1 text-lg tracking-tight font-normal mr-6">
+            <h5 class="mb-1 mt-1 text-sm tracking-tight font-normal mr-6">
               Category Account
             </h5>
             <p
@@ -72,7 +72,7 @@
             </p>
           </div>
           <div class="flex px-4 justify-between items-center">
-            <h5 class="mb-1 mt-1 text-lg tracking-tight font-normal mr-6">
+            <h5 class="mb-1 mt-1 text-sm tracking-tight font-normal mr-6">
               Cash account
             </h5>
             <p
@@ -82,7 +82,7 @@
             </p>
           </div>
           <div class="flex px-4 justify-between items-center">
-            <h5 class="mb-1 mt-1 text-lg tracking-tight font-normal mr-6">
+            <h5 class="mb-1 mt-1 text-sm tracking-tight font-normal mr-6">
               Purchase Value
             </h5>
             <p
@@ -92,7 +92,7 @@
             </p>
           </div>
           <div class="flex px-4 justify-between items-center">
-            <h5 class="mb-1 mt-1 text-lg tracking-tight font-normal mr-6">
+            <h5 class="mb-1 mt-1 text-sm tracking-tight font-normal mr-6">
               Current Value
             </h5>
             <p
@@ -102,7 +102,7 @@
             </p>
           </div>
           <div class="flex px-4 justify-between items-center">
-            <h5 class="mb-1 mt-1 text-lg tracking-tight font-normal mr-6">
+            <h5 class="mb-1 mt-1 text-sm tracking-tight font-normal mr-6">
               In service date
             </h5>
             <p
@@ -112,7 +112,7 @@
             </p>
           </div>
           <div class="flex px-4 justify-between items-center">
-            <h5 class="mb-1 mt-1 text-lg tracking-tight font-normal mr-6">
+            <h5 class="mb-1 mt-1 text-sm tracking-tight font-normal mr-6">
               Purchase date
             </h5>
             <p
