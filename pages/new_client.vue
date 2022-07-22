@@ -52,6 +52,7 @@
                 Full Name:
               </label>
               <input
+              v-model="c_name"
                 class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder=""
               />
@@ -62,6 +63,7 @@
                   Telephone:
                 </label>
                 <input
+                v-model="c_phone"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -71,6 +73,7 @@
                   Mobile:
                 </label>
                 <input
+                v-model="c_mobile"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -82,6 +85,7 @@
                   Street Address 1:
                 </label>
                 <input
+                v-model="c_street1"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -91,6 +95,7 @@
                   Street Address 2:
                 </label>
                 <input
+                v-model="c_street2"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -102,6 +107,7 @@
                   City:
                 </label>
                 <input
+                v-model="c_city"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -111,6 +117,7 @@
                   State:
                 </label>
                 <input
+                v-model="c_state"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -120,6 +127,7 @@
                   Postal Code:
                 </label>
                 <input
+                v-model="c_postalCode"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -130,10 +138,11 @@
                 Country:
               </label>
               <select
+              v-model="c_country"
                 class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 aria-label="Default select example"
               >
-                <option value="3">Kenya</option>
+                <option v-for="(country,index) in countries" :key="index" :value="country" >{{country}}</option>
               </select>
             </div>
           </div>
@@ -327,6 +336,21 @@ const handleIndividual = () => {
   business.value = false;
   individual.value = true;
 };
+const c_name=ref('');
+const c_phone=ref('');
+const c_mobile=ref('');
+const c_street1=ref('');
+const c_street2=ref('')
+const c_city=ref('');
+const c_state=ref('');
+const c_postalCode=ref('');
+const c_country=ref('')
+const countries=ref([
+  'Kenya',
+  'Uganda',
+  "Rwanda",
+  'Burundi'
+])
 </script>
 
 <style lang="css" scoped>
