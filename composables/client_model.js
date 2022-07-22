@@ -8,7 +8,8 @@
     city,
     state,
     postalCode,
-    country
+    country,
+    time
   ) {
     this.name = name;
     this.phone = phone;
@@ -19,6 +20,7 @@
     this.state = state;
     this.postalCode = postalCode;
     this.country = country;
+    this.time=time
   }
 }
 export const clientConverter = {
@@ -33,6 +35,7 @@ export const clientConverter = {
       state: client.state,
       postalCode: client.postalCode,
       country: client.country,
+      time:client.time
     };
   },
   fromFirestore: (snapshot) => {
@@ -45,7 +48,8 @@ export const clientConverter = {
       data.streetAddress2,
       data.city,
       data.postalCode,
-      data.country
+      data.country,
+      data.time
     );
   },
 };

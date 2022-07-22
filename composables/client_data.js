@@ -20,7 +20,8 @@ await setDoc(ref,new City(
     city,
     state,
     postalCode,
-    country
+    country,
+    Timestamp.fromDate(new Date.now())
 ))
 
 
