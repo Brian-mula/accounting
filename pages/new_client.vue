@@ -257,6 +257,7 @@
                   Code Number:
                 </label>
                 <input
+                v-model="c_codeNumber"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -266,10 +267,11 @@
                   Invoicing Method:
                 </label>
                 <select
+                v-model="c_invoicingMethod"
                   class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   aria-label="Default select example"
                 >
-                  <option value="3">Print(offline)</option>
+                  <option value="offline">Print(offline)</option>
                 </select>
               </div>
             </div>
@@ -279,6 +281,7 @@
                   Opening Balance:
                 </label>
                 <input
+                v-model="c_openBal"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -288,6 +291,7 @@
                   Starting Balance Date:
                 </label>
                 <input
+                v-model="c_startingDate"
                   type="date"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
@@ -299,10 +303,11 @@
                 Currency:
               </label>
               <select
+              v-model="c_currency"
                 class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 aria-label="Default select example"
               >
-                <option value="3">Kes Kenya shillings</option>
+                <option value="Kes">Kes Kenya shillings</option>
               </select>
             </div>
             <div class="mb-4 w-72 px-4">
@@ -310,6 +315,7 @@
                 Email:
               </label>
               <input
+              v-model="c_email"
                 type="email"
                 class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder=""
