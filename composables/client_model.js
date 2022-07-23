@@ -5,45 +5,43 @@ import {
   collection,
 } from "firebase/firestore";
 
-export const clientClass=()=>{
-  return class Client {
-    constructor(
-      name,
-      phone,
-      mobile,
-      streetAddress1,
-      streetAddress2,
-      city,
-      state,
-      postalCode,
-      country,
-      codeNumber,
-      invoiceMethod,
-      openingBal,
-      startingBalDate,
-      currency,
-      email
-    ) {
-      this.name = name;
-      this.phone = phone;
-      this.mobile = mobile;
-      this.streetAddress1 = streetAddress1;
-      this.streetAddress2 = streetAddress2;
-      this.city = city;
-      this.state = state;
-      this.postalCode = postalCode;
-      this.country = country;
-      this.codeNumber=codeNumber;
-      this.invoiceMethod=invoiceMethod;
-      this.openingBal=openingBal;
-      this.startingBalDate=startingBalDate;
-      this.currency=currency;
-      this.email=email
-    }
-  } 
-}
+ export class Client {
+  constructor(
+    name,
+    phone,
+    mobile,
+    streetAddress1,
+    streetAddress2,
+    city,
+    state,
+    postalCode,
+    country,
+    codeNumber,
+    invoiceMethod,
+    openingBal,
+    startingBalDate,
+    currency,
+    email
+  ) {
+    this.name = name;
+    this.phone = phone;
+    this.mobile = mobile;
+    this.streetAddress1 = streetAddress1;
+    this.streetAddress2 = streetAddress2;
+    this.city = city;
+    this.state = state;
+    this.postalCode = postalCode;
+    this.country = country;
+    this.codeNumber=codeNumber;
+    this.invoiceMethod=invoiceMethod;
+    this.openingBal=openingBal;
+    this.startingBalDate=startingBalDate;
+    this.currency=currency;
+    this.email=email
+  }
+} 
 
-const clientConverter={
+export const clientConverter={
   toFirestore:(client)=>{
     return{
       name:client.name,
@@ -62,6 +60,27 @@ const clientConverter={
       currency :client.currency,
       email:client.email
     }
+  },
+  fromFirestore:(snapshot)=>{
+    const data=snapshot.data()
+    return new Client(
+      data.name,
+      data.phone,
+      data.mobile,
+      data.streetAddress1,
+      data.streetAddress2,
+      data.city,
+      data.state,
+      data.postalCode,
+      data.country,
+      data.country,
+      data.codeNumber,
+      data.invoiceMethod,
+      data.openingBal,
+      data.startingBalDate,
+      data.currency,
+      data.email
+    )
   }
 }
 
