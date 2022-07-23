@@ -1,8 +1,9 @@
 <template>
   <div>
     <form>
-    <div class="flex items-center justify-end mt-2 mb-2">
+      <div class="flex items-center justify-end mt-2 mb-2">
         <button
+        @click="handleSubmit"
           type="button"
           class="inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
         >
@@ -52,7 +53,7 @@
                 Full Name:
               </label>
               <input
-              v-model="c_name"
+                v-model="c_name"
                 class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder=""
               />
@@ -63,7 +64,7 @@
                   Telephone:
                 </label>
                 <input
-                v-model="c_phone"
+                  v-model="c_phone"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -73,7 +74,7 @@
                   Mobile:
                 </label>
                 <input
-                v-model="c_mobile"
+                  v-model="c_mobile"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -85,7 +86,7 @@
                   Street Address 1:
                 </label>
                 <input
-                v-model="c_street1"
+                  v-model="c_street1"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -95,7 +96,7 @@
                   Street Address 2:
                 </label>
                 <input
-                v-model="c_street2"
+                  v-model="c_street2"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -107,7 +108,7 @@
                   City:
                 </label>
                 <input
-                v-model="c_city"
+                  v-model="c_city"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -117,7 +118,7 @@
                   State:
                 </label>
                 <input
-                v-model="c_state"
+                  v-model="c_state"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -127,7 +128,7 @@
                   Postal Code:
                 </label>
                 <input
-                v-model="c_postalCode"
+                  v-model="c_postalCode"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -138,11 +139,17 @@
                 Country:
               </label>
               <select
-              v-model="c_country"
+                v-model="c_country"
                 class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 aria-label="Default select example"
               >
-                <option v-for="(country,index) in countries" :key="index" :value="country" >{{country}}</option>
+                <option
+                  v-for="(country, index) in countries"
+                  :key="index"
+                  :value="country"
+                >
+                  {{ country }}
+                </option>
               </select>
             </div>
           </div>
@@ -240,53 +247,53 @@
         </div>
         <div class="bg-white mx-3 h-fit" id="custom">
           <div class="w-full">
-          <div class="bg-gray-100 border py-3">
-            <h3 class="px-4 text-lg text-purple-900">Account Details</h3>
-          </div>
-          <div class="flex justify-between items-center mt-2">
-            <div class="mb-4 w-72 px-4">
-              <label class="block text-gray-700 text-sm mb-2" for="username">
-                Code Number:
-              </label>
-              <input
-                class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder=""
-              />
+            <div class="bg-gray-100 border py-3">
+              <h3 class="px-4 text-lg text-purple-900">Account Details</h3>
             </div>
-            <div class="mb-4 w-72 px-4">
-              <label class="block text-gray-700 text-sm mb-2" for="username">
-                Invoicing Method:
-              </label>
-              <select
-                class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                aria-label="Default select example"
-              >
-                <option value="3">Print(offline)</option>
-              </select>
+            <div class="flex justify-between items-center mt-2">
+              <div class="mb-4 w-72 px-4">
+                <label class="block text-gray-700 text-sm mb-2" for="username">
+                  Code Number:
+                </label>
+                <input
+                  class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  placeholder=""
+                />
+              </div>
+              <div class="mb-4 w-72 px-4">
+                <label class="block text-gray-700 text-sm mb-2" for="username">
+                  Invoicing Method:
+                </label>
+                <select
+                  class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                  aria-label="Default select example"
+                >
+                  <option value="3">Print(offline)</option>
+                </select>
+              </div>
             </div>
-          </div>
-          <div class="flex justify-between items-center mt-2">
-            <div class="mb-4 w-72 px-4">
-              <label class="block text-gray-700 text-sm mb-2" for="username">
-                Opening Balance:
-              </label>
-              <input
-                class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder=""
-              />
+            <div class="flex justify-between items-center mt-2">
+              <div class="mb-4 w-72 px-4">
+                <label class="block text-gray-700 text-sm mb-2" for="username">
+                  Opening Balance:
+                </label>
+                <input
+                  class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  placeholder=""
+                />
+              </div>
+              <div class="mb-4 w-72 px-4">
+                <label class="block text-gray-700 text-sm mb-2" for="username">
+                  Starting Balance Date:
+                </label>
+                <input
+                  type="date"
+                  class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  placeholder=""
+                />
+              </div>
             </div>
-            <div class="mb-4 w-72 px-4">
-              <label class="block text-gray-700 text-sm mb-2" for="username">
-                Starting Balance Date:
-              </label>
-              <input
-              type="date"
-                class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder=""
-              />
-            </div>
-          </div>
-          <div class="mb-4 w-full px-4">
+            <div class="mb-4 w-full px-4">
               <label class="block text-gray-700 text-sm mb-2" for="username">
                 Currency:
               </label>
@@ -302,7 +309,7 @@
                 Email:
               </label>
               <input
-              type="email"
+                type="email"
                 class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder=""
               />
@@ -336,21 +343,43 @@ const handleIndividual = () => {
   business.value = false;
   individual.value = true;
 };
-const c_name=ref('');
-const c_phone=ref('');
-const c_mobile=ref('');
-const c_street1=ref('');
-const c_street2=ref('')
-const c_city=ref('');
-const c_state=ref('');
-const c_postalCode=ref('');
-const c_country=ref('')
-const countries=ref([
-  'Kenya',
-  'Uganda',
-  "Rwanda",
-  'Burundi'
-])
+const c_name = ref("");
+const c_phone = ref("");
+const c_mobile = ref("");
+const c_street1 = ref("");
+const c_street2 = ref("");
+const c_city = ref("");
+const c_state = ref("");
+const c_postalCode = ref("");
+const c_country = ref("");
+const countries = ref(["Kenya", "Uganda", "Rwanda", "Burundi"]);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  
+  if (
+    c_name &&
+    c_phone &&
+    c_mobile &&
+    c_street1 &&
+    c_street2 &&
+    c_city &&
+    c_state &&
+    c_postalCode &&
+    c_country
+  ) {
+    await addClient(
+      c_name.value,
+      c_phone.value,
+      c_mobile.value,
+      c_street1.value,
+      c_street2.value,
+      c_city.value,
+      c_state.value,
+      c_postalCode.value,
+      c_country.value
+    );
+  }
+};
 </script>
 
 <style lang="css" scoped>

@@ -53,3 +53,33 @@ export const clientConverter = {
     );
   },
 };
+
+import {  addDoc, Timestamp,getFirestore,collection } from "firebase/firestore"; 
+export const addClient=async(
+    name,
+    phone,
+    mobile,
+    streetAddress1,
+    streetAddress2,
+    city,
+    state,
+    postalCode,
+    country,)=>{
+const db=getFirestore();
+const clientRef=collection(db,'clients').withConverter(clientConverter)
+// const ref = doc(db, 'clients').withConverter(clientConverter);
+await addDoc(clientRef,new Client(
+    name,
+    phone,
+    mobile,
+    streetAddress1,
+    streetAddress2,
+    city,
+    state,
+    postalCode,
+    country,
+    Timestamp.fromDate(new Date())
+));
+
+
+}
