@@ -1,60 +1,7 @@
- class Client {
-  constructor(
-    name,
-    phone,
-    mobile,
-    streetAddress1,
-    streetAddress2,
-    city,
-    state,
-    postalCode,
-    country,
-    time
-  ) {
-    this.name = name;
-    this.phone = phone;
-    this.mobile = mobile;
-    this.streetAddress1 = streetAddress1;
-    this.streetAddress2 = streetAddress2;
-    this.city = city;
-    this.state = state;
-    this.postalCode = postalCode;
-    this.country = country;
-    this.time=time
-  }
-}
-export const clientConverter = {
-  toFirestore: (client) => {
-    return {
-      name: client.name,
-      phone: client.phone,
-      mobile: client.mobile,
-      streetAddress1: client.streetAddress1,
-      streetAddress2: client.streetAddress2,
-      city: client.city,
-      state: client.state,
-      postalCode: client.postalCode,
-      country: client.country,
-      time:client.time
-    };
-  },
-  fromFirestore: (snapshot) => {
-    const data = snapshot.data();
-    return new Client(
-      data.name,
-      data.phone,
-      data.mobile,
-      data.streetAddress1,
-      data.streetAddress2,
-      data.city,
-      data.postalCode,
-      data.country,
-      data.time
-    );
-  },
-};
-
 import {  addDoc, Timestamp,getFirestore,collection } from "firebase/firestore"; 
+
+
+
 export const addClient=async(
     name,
     phone,
@@ -66,20 +13,20 @@ export const addClient=async(
     postalCode,
     country,)=>{
 const db=getFirestore();
-const clientRef=collection(db,'clients').withConverter(clientConverter)
+const clientRef=collection(db,'clients')
 // const ref = doc(db, 'clients').withConverter(clientConverter);
-await addDoc(clientRef,new Client(
-    name,
-    phone,
-    mobile,
-    streetAddress1,
-    streetAddress2,
-    city,
-    state,
-    postalCode,
-    country,
-    Timestamp.fromDate(new Date())
-));
+await addDoc(clientRef,{
+    name : name,
+    phone : phone,
+    mobile : mobile,
+    streetAddress1 :streetAddress1,
+    streetAddress2 :streetAddress2,
+    city : city,
+    state : state,
+    postalCode : postalCode,
+    country : country,
+    time:Timestamp.fromDate(new Date())
+    });
 
 
 }

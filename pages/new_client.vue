@@ -1,15 +1,7 @@
 <template>
   <div>
     <form>
-      <div class="flex items-center justify-end mt-2 mb-2">
-        <button
-        @click="handleSubmit"
-          type="button"
-          class="inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
-        >
-          Save
-        </button>
-      </div>
+     
       <div class="flex">
         <div class="bg-white h-min" id="custom">
           <div class="bg-gray-100 border py-3">
@@ -328,6 +320,16 @@
           </div>
         </div>
       </div>
+
+       <div class="flex items-center justify-end mt-2 mb-2">
+        <button
+        @click="handleSubmit"
+          type="button"
+          class="inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
+        >
+          Save
+        </button>
+      </div>
     </form>
   </div>
 </template>
@@ -355,30 +357,10 @@ const c_country = ref("");
 const countries = ref(["Kenya", "Uganda", "Rwanda", "Burundi"]);
 const handleSubmit = async (e) => {
   e.preventDefault();
-  
-  if (
-    c_name &&
-    c_phone &&
-    c_mobile &&
-    c_street1 &&
-    c_street2 &&
-    c_city &&
-    c_state &&
-    c_postalCode &&
-    c_country
-  ) {
-    await addClient(
-      c_name.value,
-      c_phone.value,
-      c_mobile.value,
-      c_street1.value,
-      c_street2.value,
-      c_city.value,
-      c_state.value,
-      c_postalCode.value,
-      c_country.value
-    );
-  }
+  console.log('starting to post')
+  console.log(c_city.value)
+  await addClient(c_name.value,c_phone.value,c_mobile.value,c_street1.value,c_street2.value,c_city.value,c_state.value,c_postalCode.value,c_country.value)
+  console.log('posted')
 };
 </script>
 
