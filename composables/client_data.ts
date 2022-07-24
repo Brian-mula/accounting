@@ -1,4 +1,4 @@
-import { doc, setDoc,getFirestore,collection,getDoc } from "firebase/firestore"; 
+import { doc, setDoc,getFirestore,collection,getDocs } from "firebase/firestore"; 
 export const postClient=async(
     name:string,
     phone :string,
@@ -40,5 +40,12 @@ export const postClient=async(
 }
 // !get all clients data
 export const getAllClients=async()=>{
+    const clients=[];
     const db=getFirestore();
+    const clientSnap=await getDocs(collection(db,'clients'));
+    clientSnap.forEach((client)=>{
+        clients.push({...client.data(),id:client.id})
+    })
+    
+   return clients;
 }
