@@ -82,6 +82,9 @@
           {{client.name}}
         </h5>
       </div>
+      <font-awesome-icon :icon="['fas', 'bars']" />
+      <div>
+      </div>
     </div>
   </div>
 </template>
