@@ -1,7 +1,6 @@
 <template>
   <div>
     <form>
-     
       <div class="flex">
         <div class="bg-white h-min" id="custom">
           <div class="bg-gray-100 border py-3">
@@ -151,7 +150,7 @@
                 Business Name:
               </label>
               <input
-              v-model="c_name"
+                v-model="c_name"
                 class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder=""
               />
@@ -162,7 +161,7 @@
                   Telephone:
                 </label>
                 <input
-                v-model="c_phone"
+                  v-model="c_phone"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -172,7 +171,7 @@
                   Mobile:
                 </label>
                 <input
-                v-model="c_mobile"
+                  v-model="c_mobile"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -184,7 +183,7 @@
                   Street Address 1:
                 </label>
                 <input
-                v-model="c_street1"
+                  v-model="c_street1"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -194,7 +193,7 @@
                   Street Address 2:
                 </label>
                 <input
-                v-model="c_street2"
+                  v-model="c_street2"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -206,7 +205,7 @@
                   City:
                 </label>
                 <input
-                v-model="c_city"
+                  v-model="c_city"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -216,7 +215,7 @@
                   State:
                 </label>
                 <input
-                v-model="c_state"
+                  v-model="c_state"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -226,7 +225,7 @@
                   Postal Code:
                 </label>
                 <input
-                v-model="c_postalCode"
+                  v-model="c_postalCode"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -237,7 +236,7 @@
                 Country:
               </label>
               <select
-              v-model="c_country"
+                v-model="c_country"
                 class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 aria-label="Default select example"
               >
@@ -257,7 +256,7 @@
                   Code Number:
                 </label>
                 <input
-                v-model="c_codeNumber"
+                  v-model="c_codeNumber"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -267,7 +266,7 @@
                   Invoicing Method:
                 </label>
                 <select
-                v-model="c_invoicingMethod"
+                  v-model="c_invoicingMethod"
                   class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   aria-label="Default select example"
                 >
@@ -281,7 +280,7 @@
                   Opening Balance:
                 </label>
                 <input
-                v-model="c_openBal"
+                  v-model="c_openBal"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -291,7 +290,7 @@
                   Starting Balance Date:
                 </label>
                 <input
-                v-model="c_startingDate"
+                  v-model="c_startingDate"
                   type="date"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
@@ -303,7 +302,7 @@
                 Currency:
               </label>
               <select
-              v-model="c_currency"
+                v-model="c_currency"
                 class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 aria-label="Default select example"
               >
@@ -315,7 +314,7 @@
                 Email:
               </label>
               <input
-              v-model="c_email"
+                v-model="c_email"
                 type="email"
                 class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder=""
@@ -336,9 +335,9 @@
         </div>
       </div>
 
-       <div class="flex items-center justify-end mt-2 mb-2">
+      <div class="flex items-center justify-end mt-2 mb-2">
         <button
-        @click="handleSubmit"
+          @click="handleSubmit"
           type="button"
           class="inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
         >
@@ -369,13 +368,37 @@ const c_city = ref("");
 const c_state = ref("");
 const c_postalCode = ref("");
 const c_country = ref("");
+const c_codeNumber = ref("");
+const c_invoicingMethod = ref("");
+const c_openBal = ref("");
+const c_startingDate = ref("");
+const c_currency = ref("");
+const c_email = ref("");
+
 const countries = ref(["Kenya", "Uganda", "Rwanda", "Burundi"]);
 const handleSubmit = async (e) => {
   e.preventDefault();
-  console.log('starting to post')
-  console.log(c_city.value)
-  await addClient(c_name.value,c_phone.value,c_mobile.value,c_street1.value,c_street2.value,c_city.value,c_state.value,c_postalCode.value,c_country.value)
-  console.log('posted')
+  console.log("starting to post");
+  console.log(c_city.value);
+  await postClient(
+    c_name.value,
+    c_phone.value,
+    c_mobile,
+    c_street1.value,
+    c_street2.value,
+    c_city.value,
+    c_state.value,
+    c_postalCode.value,
+    c_country.value,
+    c_codeNumber.value,
+    c_invoicingMethod.value,
+    c_openBal.value,
+    c_startingDate.value,
+    c_currency.value,
+    c_email.value
+  );
+  // await addClient(c_name.value,c_phone.value,c_mobile.value,c_street1.value,c_street2.value,c_city.value,c_state.value,c_postalCode.value,c_country.value)
+  console.log("posted");
 };
 </script>
 

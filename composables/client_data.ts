@@ -34,6 +34,7 @@ export const postClient=async(
         currency,
         email
 
-    ))
+    ));
+    console.log('posted');
 
 }
