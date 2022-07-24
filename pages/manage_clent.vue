@@ -1,8 +1,8 @@
 <template>
   <div>
-
-   <div class="flex justify-end items-end p-3">
-      <nuxt-link to="/new_client"
+    <div class="flex justify-end items-end p-3">
+      <nuxt-link
+        to="/new_client"
         class="bg-blue-600 p-2 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
       >
         <img
@@ -73,28 +73,33 @@
         </div>
       </div>
     </form>
-    <div
-    v-for="client in clients" :key="client.id"
-      class="flex justify-between border-b-4 bg-white rounded px-8 pt-2 pb-2 items-center"
-    >
-      <div>
-        <h5 class="mb-1 mt-1 text-lg tracking-tight text-gray-700">
-          {{client.name}}
-        </h5>
-      </div>
-      <font-awesome-icon :icon="['fas', 'bars']" />
-      <div>
+    <div v-for="client in clients" :key="client.id">
+      <div
+        class="flex justify-between border-b-4 bg-white rounded px-8 pt-2 pb-2 items-center"
+      >
+        <nuxt-link :to="{name:'clients-id',params:{id:client.id}}">
+          <h5 class="mb-1 mt-1 text-lg tracking-tight text-gray-700">
+            {{ client.name }}
+          </h5>
+        </nuxt-link>
+
+        <div>
+          <font-awesome-icon
+            :icon="['fas', 'ellipsis-h']"
+            class="cursor-pointer"
+          />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-const clients=ref([]);
-onMounted(async()=>{
-  clients.value=await getAllClients();
+const clients = ref([]);
+onMounted(async () => {
+  clients.value = await getAllClients();
   console.log(clients.value);
-})
+});
 </script>
 
 <style lang="scss" scoped></style>
