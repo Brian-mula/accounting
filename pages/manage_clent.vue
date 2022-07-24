@@ -5,11 +5,12 @@
         to="/new_client"
         class="bg-blue-600 p-2 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
       >
-        <img
+        <!-- <img
           src="~/assets/images/add-svgrepo-com.svg"
           alt=""
           class="h-5 w-5 mx-2"
-        />
+        /> -->
+        <font-awesome-icon :icon="['fas','plus']" class="text-white px-2"/>
         <h4 class="text-white">New Client</h4>
       </nuxt-link>
     </div>
@@ -81,6 +82,7 @@
           <h5 class="mb-1 mt-1 text-lg tracking-tight text-gray-700">
             {{ client.name }}
           </h5>
+          <p class="font-normal text-gray-500 text-sm">#{{client.codeNumber}}</p>
         </nuxt-link>
 
         <div>
