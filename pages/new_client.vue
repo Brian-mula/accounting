@@ -383,7 +383,7 @@ const handleSubmit = async (e) => {
   await postClient(
     c_name.value,
     c_phone.value,
-    c_mobile,
+    c_mobile.value,
     c_street1.value,
     c_street2.value,
     c_city.value,

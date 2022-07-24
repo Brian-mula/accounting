@@ -1,4 +1,4 @@
-import { doc, setDoc,getFirestore,collection } from "firebase/firestore"; 
+import { doc, setDoc,getFirestore,collection,getDoc } from "firebase/firestore"; 
 export const postClient=async(
     name:string,
     phone :string,
@@ -37,4 +37,8 @@ export const postClient=async(
     ));
     console.log('posted');
 
+}
+// !get all clients data
+export const getAllClients=async()=>{
+    const db=getFirestore();
 }
