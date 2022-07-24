@@ -74,17 +74,24 @@
       </div>
     </form>
     <div
+    v-for="client in clients" :key="client.id"
       class="flex justify-between border-b-4 bg-white rounded px-8 pt-2 pb-2 items-center"
     >
       <div>
         <h5 class="mb-1 mt-1 text-lg tracking-tight text-gray-700">
-          Post Client
+          {{client.name}}
         </h5>
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const clients=ref([]);
+onMounted(async()=>{
+  clients.value=await getAllClients();
+  console.log(clients.value);
+})
+</script>
 
 <style lang="scss" scoped></style>
