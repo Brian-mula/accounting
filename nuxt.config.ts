@@ -22,6 +22,11 @@ export default defineNuxtConfig({
   },
     css: ["~/assets/css/style.css"],
     build: {
+      transpile:[
+        '@fortawesome/fontawesome-svg-core',
+        '@fortawesome/pro-solid-svg-icons',
+        '@fortawesome/free-brands-svg-icons'
+      ],
         postcss: {
           postcssOptions: {
             plugins: {
