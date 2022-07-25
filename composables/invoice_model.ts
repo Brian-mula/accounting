@@ -40,7 +40,7 @@ export class Invoice {
   }
 }
 
-const invoiceConverter = {
+export const invoiceConverter = {
   toFirestore: (invoice: Invoice) => {
     return {
       method: invoice.method,
