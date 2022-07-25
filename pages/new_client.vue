@@ -355,6 +355,10 @@
 </template>
 
 <script setup>
+const router=useRouter()
+const clients=getAllClients();
+console.log((await clients).length)
+
 const business = ref(false);
 const individual = ref(true);
 const handlebusine = () => {
@@ -374,12 +378,13 @@ const c_city = ref("");
 const c_state = ref("");
 const c_postalCode = ref("");
 const c_country = ref("");
-const c_codeNumber = ref("");
+const c_codeNumber = ref('000'+((await clients).length+1).toString());
 const c_invoicingMethod = ref("");
 const c_openBal = ref("");
 const c_startingDate = ref("");
 const c_currency = ref("");
 const c_email = ref("");
+console.log(c_codeNumber.value)
 
 const countries = ref(["Kenya", "Uganda", "Rwanda", "Burundi"]);
 const handleSubmit = async (e) => {
@@ -405,6 +410,7 @@ const handleSubmit = async (e) => {
   );
   // await addClient(c_name.value,c_phone.value,c_mobile.value,c_street1.value,c_street2.value,c_city.value,c_state.value,c_postalCode.value,c_country.value)
   console.log("posted");
+  router.push('/manage_clent')
 };
 </script>
 

@@ -376,7 +376,7 @@ onMounted(async () => {
   client.value = await getClient(route.params.id);
   console.log(client.value);
 });
-const c_name = ref(client.value.name);
+const c_name = ref('');
 const c_phone = ref("");
 const c_mobile = ref("");
 const c_street1 = ref("");
@@ -390,7 +390,7 @@ const c_invoicingMethod = ref("");
 const c_openBal = ref("");
 const c_startingDate = ref("");
 const c_currency = ref("");
-const c_email = ref(client.value.email);
+const c_email = ref('');
 
 const countries = ref(["Kenya", "Uganda", "Rwanda", "Burundi"]);
 const handleSubmit = async (e) => {
