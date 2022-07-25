@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="client">
     <div class="bg-blue-100">
       <div class="h-8"></div>
       <div class="bg-white mx-4">
@@ -12,7 +12,7 @@
           <h5
             class="mb-1 mt-1 px-4 text-2xl tracking-tight text-purple-900 font-normal"
           >
-            Mulati Brian
+            {{client.name}}
           </h5>
         </div>
       </div>
@@ -187,6 +187,9 @@
       </div>
       <div class="h-10"></div>
     </div>
+  </div>
+  <div v-else>
+  <font-awesome-icon :icon="['fas','spinner spin 3x fw']"/>
   </div>
 </template>
 
