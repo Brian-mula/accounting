@@ -1,4 +1,4 @@
-import { doc, setDoc,getFirestore,collection,getDocs, getDoc } from "firebase/firestore"; 
+import { doc, setDoc,getFirestore,collection,getDocs, getDoc,updateDoc } from "firebase/firestore"; 
 export const postClient=async(
     name:string,
     phone :string,
@@ -62,4 +62,45 @@ export const getClient=async(id:string)=>{
         console.log('the client could not be found')
     }
     return client;
+}
+
+// !update client data
+export const updateClient=async(
+    id:string,
+    name:string,
+    phone :string,
+    mobile: string,
+    streetAddress1: string,
+    streetAddress2 : string,
+    city : string,
+    state : string,
+    postalCode : string,
+    country : string,
+    codeNumber : string,
+    invoiceMethod : string,
+    openingBal : string,
+    startingBalDate : string,
+    currency : string,
+    email:string
+    )=>{
+    const db=getFirestore();
+    const clientRef=doc(db,'clients',id).withConverter(clientConverter);
+    await updateDoc(clientRef,new Client(
+        name,
+        phone,
+        mobile,
+        streetAddress1,
+        streetAddress2,
+        city,
+        state,
+        postalCode,
+        country,
+        codeNumber,
+        invoiceMethod,
+        openingBal,
+        startingBalDate,
+        currency,
+        email
+    ))
+
 }
