@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="client">
     <form>
       <div class="flex">
         <div class="bg-white h-min" id="custom">
@@ -46,7 +46,7 @@
               <input
                 v-model="c_name"
                 class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder=""
+                :placeholder="client.name"
               />
             </div>
             <div class="flex justify-between items-center mt-2">
@@ -57,7 +57,7 @@
                 <input
                   v-model="c_phone"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
+                  :placeholder="client.phone"
                 />
               </div>
               <div class="mb-4 w-72 px-4">
@@ -67,7 +67,7 @@
                 <input
                   v-model="c_mobile"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
+                  :placeholder="client.mobile"
                 />
               </div>
             </div>
@@ -79,7 +79,7 @@
                 <input
                   v-model="c_street1"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
+                  :placeholder="client.streetAddress1"
                 />
               </div>
               <div class="mb-4 w-72 px-4">
@@ -89,7 +89,7 @@
                 <input
                   v-model="c_street2"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
+                  :placeholder="client.streetAddress2"
                 />
               </div>
             </div>
@@ -101,7 +101,7 @@
                 <input
                   v-model="c_city"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
+                  :placeholder="client.city"
                 />
               </div>
               <div class="mb-4 w-44 px-4">
@@ -111,7 +111,7 @@
                 <input
                   v-model="c_state"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
+                  :placeholder="client.state"
                 />
               </div>
               <div class="mb-4 w-44 px-4">
@@ -121,7 +121,7 @@
                 <input
                   v-model="c_postalCode"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
+                  :placeholder="client.postalCode"
                 />
               </div>
             </div>
@@ -134,6 +134,7 @@
                 class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 aria-label="Default select example"
               >
+              <option selected>{{client.country}}</option>
                 <option
                   v-for="(country, index) in countries"
                   :key="index"
@@ -152,7 +153,7 @@
               <input
                 v-model="c_name"
                 class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder=""
+                :placeholder="client.name"
               />
             </div>
             <div class="flex justify-between items-center mt-2">
@@ -163,7 +164,7 @@
                 <input
                   v-model="c_phone"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
+                  :placeholder="client.phone"
                 />
               </div>
               <div class="mb-4 w-72 px-4">
@@ -173,7 +174,7 @@
                 <input
                   v-model="c_mobile"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
+                  :placeholder="client.mobile"
                 />
               </div>
             </div>
@@ -185,7 +186,7 @@
                 <input
                   v-model="c_street1"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
+                  :placeholder="client.streetAddress1"
                 />
               </div>
               <div class="mb-4 w-72 px-4">
@@ -195,7 +196,7 @@
                 <input
                   v-model="c_street2"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
+                  :placeholder="client.streetAddress2"
                 />
               </div>
             </div>
@@ -207,7 +208,7 @@
                 <input
                   v-model="c_city"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
+                  :placeholder="client.city"
                 />
               </div>
               <div class="mb-4 w-44 px-4">
@@ -217,7 +218,7 @@
                 <input
                   v-model="c_state"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
+                  :placeholder="client.state"
                 />
               </div>
               <div class="mb-4 w-44 px-4">
@@ -227,7 +228,7 @@
                 <input
                   v-model="c_postalCode"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
+                  :placeholder="client.postalCode"
                 />
               </div>
             </div>
@@ -240,7 +241,14 @@
                 class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 aria-label="Default select example"
               >
-                <option value="3">Kenya</option>
+              
+                <option
+                  v-for="(country, index) in countries"
+                  :key="index"
+                  :value="country"
+                >
+                  {{ country }}
+                </option>
               </select>
             </div>
           </div>
@@ -258,7 +266,7 @@
                 <input
                   v-model="c_codeNumber"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
+                  :placeholder="client.codeNumber"
                 />
               </div>
               <div class="mb-4 w-72 px-4">
@@ -270,6 +278,7 @@
                   class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   aria-label="Default select example"
                 >
+                <option selected>{{client.invoiceMethod}}</option>
                   <option value="offline">Print(offline)</option>
                 </select>
               </div>
@@ -282,7 +291,7 @@
                 <input
                   v-model="c_openBal"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
+                  :placeholder="client.openingBal"
                 />
               </div>
               <div class="mb-4 w-72 px-4">
@@ -293,7 +302,7 @@
                   v-model="c_startingDate"
                   type="date"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder=""
+                  :placeholder="client.startingBalDate"
                 />
               </div>
             </div>
@@ -306,6 +315,7 @@
                 class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 aria-label="Default select example"
               >
+              <option>{{client.currency}}</option>
                 <option value="Kes">Kes Kenya shillings</option>
               </select>
             </div>
@@ -317,7 +327,7 @@
                 v-model="c_email"
                 type="email"
                 class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder=""
+                :placeholder="client.email"
               />
             </div>
             <div class="mb-4 w-full px-4">
@@ -341,7 +351,7 @@
           type="button"
           class="inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
         >
-          Save
+          Update
         </button>
       </div>
     </form>
@@ -349,6 +359,8 @@
 </template>
 
 <script setup>
+const route=useRoute()
+const router=useRouter();
 const business = ref(false);
 const individual = ref(true);
 const handlebusine = () => {
@@ -359,7 +371,12 @@ const handleIndividual = () => {
   business.value = false;
   individual.value = true;
 };
-const c_name = ref("");
+const client = ref(null);
+onMounted(async () => {
+  client.value = await getClient(route.params.id);
+  console.log(client.value);
+});
+const c_name = ref(client.value.name);
 const c_phone = ref("");
 const c_mobile = ref("");
 const c_street1 = ref("");
@@ -373,33 +390,37 @@ const c_invoicingMethod = ref("");
 const c_openBal = ref("");
 const c_startingDate = ref("");
 const c_currency = ref("");
-const c_email = ref("");
+const c_email = ref(client.value.email);
 
 const countries = ref(["Kenya", "Uganda", "Rwanda", "Burundi"]);
 const handleSubmit = async (e) => {
   e.preventDefault();
   console.log("starting to post");
   console.log(c_city.value);
-  await postClient(
-    c_name.value,
-    c_phone.value,
-    c_mobile.value,
-    c_street1.value,
-    c_street2.value,
-    c_city.value,
-    c_state.value,
-    c_postalCode.value,
-    c_country.value,
-    c_codeNumber.value,
-    c_invoicingMethod.value,
-    c_openBal.value,
-    c_startingDate.value,
-    c_currency.value,
-    c_email.value
-  );
+
+  // await updateClient(
+  //   route.params.id,
+  //   c_name.value,
+  //   c_phone.value,
+  //   c_mobile.value,
+  //   c_street1.value,
+  //   c_street2.value,
+  //   c_city.value,
+  //   c_state.value,
+  //   c_postalCode.value,
+  //   c_country.value,
+  //   c_codeNumber.value,
+  //   c_invoicingMethod.value,
+  //   c_openBal.value,
+  //   c_startingDate.value,
+  //   c_currency.value,
+  //   c_email.value
+  // );
   // await addClient(c_name.value,c_phone.value,c_mobile.value,c_street1.value,c_street2.value,c_city.value,c_state.value,c_postalCode.value,c_country.value)
   console.log("posted");
+  router.push('/manage_clent')
 };
+
 </script>
 
 <style lang="css" scoped>
