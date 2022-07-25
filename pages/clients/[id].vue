@@ -6,7 +6,7 @@
         <div class="mx-4 py-3 flex">
           <img
             class="w-28 h-28 rounded-sm"
-            src="https://cdn.pixabay.com/photo/2016/11/29/20/22/girl-1871104__340.jpg"
+            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
             alt="user photo"
           />
           <h5
@@ -191,6 +191,7 @@
 </template>
 
 <script setup>
+const route=useRoute();
 const details = ref(true);
 const voucher = ref(false);
 const handleDetails = () => {
@@ -201,6 +202,11 @@ const handleVoucher = () => {
   details.value = false;
   voucher.value = true;
 };
+const client=ref(null);
+onMounted(async()=>{
+    client.value=await getClient(route.params.id);
+    console.log(client.value);
+})
 </script>
 
 <style lang="scss" scoped></style>

@@ -1,4 +1,4 @@
-import { doc, setDoc,getFirestore,collection,getDocs } from "firebase/firestore"; 
+import { doc, setDoc,getFirestore,collection,getDocs, getDoc } from "firebase/firestore"; 
 export const postClient=async(
     name:string,
     phone :string,
@@ -48,4 +48,18 @@ export const getAllClients=async()=>{
     })
     
    return clients;
+}
+
+// !get a client based on the id
+export const getClient=async(id:string)=>{
+    var client=null;
+    const db=getFirestore();
+    const clientRef=doc(db,'clients',id).withConverter(clientConverter);
+    const clientSnap=await getDoc(clientRef);
+    if(clientSnap.exists()){
+        client=clientSnap.data()
+    }else{
+        console.log('the client could not be found')
+    }
+    return client;
 }
