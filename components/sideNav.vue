@@ -23,7 +23,10 @@
           <Popover class="relative">
             <PopoverButton as="div" 
               class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none "
-              >Sales</PopoverButton
+              >
+              <font-awesome-icon :icon="['fas','shopping-bag']" class="text-white px-2" />
+              <span class=" text-sm">Sales</span>
+              </PopoverButton
             >
             <transition
               enter-active-class="transition duration-200 ease-out"
@@ -67,7 +70,10 @@
           <Popover class="relative">
             <PopoverButton as="div" 
               class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none "
-              >Inventory</PopoverButton
+              >
+               <font-awesome-icon :icon="['fas','university']" class="text-white px-2" />
+              <span class=" text-sm">Inventory</span>
+              </PopoverButton
             >
             <transition
               enter-active-class="transition duration-200 ease-out"
@@ -111,7 +117,10 @@
           <Popover class="relative">
             <PopoverButton as="div" 
               class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none "
-              >Purchases</PopoverButton
+              >
+               <font-awesome-icon :icon="['fas','shopping-cart']" class="text-white px-2" />
+              <span class=" text-sm">Purchases</span>
+              </PopoverButton
             >
             <transition
               enter-active-class="transition duration-200 ease-out"
@@ -155,7 +164,10 @@
            <Popover class="relative">
             <PopoverButton as="div" 
               class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none "
-              >Finance</PopoverButton
+              >
+               <font-awesome-icon :icon="['fas','usd']" class="text-white px-2" />
+              <span class=" text-sm">Finance</span>
+              </PopoverButton
             >
             <transition
               enter-active-class="transition duration-200 ease-out"
@@ -199,7 +211,10 @@
           <Popover class="relative">
             <PopoverButton as="div" 
               class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none "
-              >Accounting</PopoverButton
+              >
+               <font-awesome-icon :icon="['fas','credit-card']" class="text-white px-2" />
+              <span class=" text-sm">Accounting</span>
+              </PopoverButton
             >
             <transition
               enter-active-class="transition duration-200 ease-out"
@@ -243,7 +258,10 @@
           <Popover class="relative">
             <PopoverButton as="div" 
               class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none "
-              >Clients</PopoverButton
+              >
+              <font-awesome-icon :icon="['fas','user']" class="text-white px-2" />
+              <span class=" text-sm">Clients</span>
+              </PopoverButton
             >
             <transition
               enter-active-class="transition duration-200 ease-out"
@@ -287,7 +305,10 @@
           <Popover class="relative">
             <PopoverButton as="div" 
               class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none "
-              >Employees</PopoverButton
+              >
+              <font-awesome-icon :icon="['fas','users']" class="text-white px-2" />
+              <span class=" text-sm">Employees</span>
+              </PopoverButton
             >
             <transition
               enter-active-class="transition duration-200 ease-out"
