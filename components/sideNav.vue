@@ -13,14 +13,20 @@
             to="/"
             class="flex items-center p-2 text-base font-normal text-gray-50 hover:bg-blue-700 bg-blue-700"
           >
-            <span class="ml-10 text-sm">Dashboard</span>
+          <div class="ml-10">
+          <font-awesome-icon :icon="['fas','home']" class="text-white px-2"/>
+            <span class=" text-sm">Dashboard</span>
+          </div>
           </nuxt-link>
         </li>
         <li>
           <Popover class="relative">
             <PopoverButton as="div" 
               class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none "
-              >Sales</PopoverButton
+              >
+              <font-awesome-icon :icon="['fas','shopping-bag']" class="text-white px-2" />
+              <span class=" text-sm">Sales</span>
+              </PopoverButton
             >
             <transition
               enter-active-class="transition duration-200 ease-out"
@@ -64,7 +70,10 @@
           <Popover class="relative">
             <PopoverButton as="div" 
               class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none "
-              >Inventory</PopoverButton
+              >
+               <font-awesome-icon :icon="['fas','university']" class="text-white px-2" />
+              <span class=" text-sm">Inventory</span>
+              </PopoverButton
             >
             <transition
               enter-active-class="transition duration-200 ease-out"
@@ -108,7 +117,10 @@
           <Popover class="relative">
             <PopoverButton as="div" 
               class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none "
-              >Purchases</PopoverButton
+              >
+               <font-awesome-icon :icon="['fas','shopping-cart']" class="text-white px-2" />
+              <span class=" text-sm">Purchases</span>
+              </PopoverButton
             >
             <transition
               enter-active-class="transition duration-200 ease-out"
@@ -152,7 +164,10 @@
            <Popover class="relative">
             <PopoverButton as="div" 
               class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none "
-              >Finance</PopoverButton
+              >
+               <font-awesome-icon :icon="['fas','usd']" class="text-white px-2" />
+              <span class=" text-sm">Finance</span>
+              </PopoverButton
             >
             <transition
               enter-active-class="transition duration-200 ease-out"
@@ -196,7 +211,10 @@
           <Popover class="relative">
             <PopoverButton as="div" 
               class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none "
-              >Accounting</PopoverButton
+              >
+               <font-awesome-icon :icon="['fas','credit-card']" class="text-white px-2" />
+              <span class=" text-sm">Accounting</span>
+              </PopoverButton
             >
             <transition
               enter-active-class="transition duration-200 ease-out"
@@ -240,7 +258,10 @@
           <Popover class="relative">
             <PopoverButton as="div" 
               class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none "
-              >Clients</PopoverButton
+              >
+              <font-awesome-icon :icon="['fas','user']" class="text-white px-2" />
+              <span class=" text-sm">Clients</span>
+              </PopoverButton
             >
             <transition
               enter-active-class="transition duration-200 ease-out"
@@ -270,6 +291,53 @@
                       class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
                     >
                        Appointments
+                    </nuxt-link>
+                    
+                  </div>
+
+                  
+                </PopoverPanel>
+              </div>
+            </transition>
+          </Popover>
+        </li>
+        <li>
+          <Popover class="relative">
+            <PopoverButton as="div" 
+              class="pl-10 flex items-center p-2 cursor-pointer text-base font-normal text-gray-50 hover:bg-blue-700 border-none "
+              >
+              <font-awesome-icon :icon="['fas','users']" class="text-white px-2" />
+              <span class=" text-sm">Employees</span>
+              </PopoverButton
+            >
+            <transition
+              enter-active-class="transition duration-200 ease-out"
+              enter-from-class="translate-y-1 opacity-0"
+              enter-to-class="translate-y-0 opacity-100"
+              leave-active-class="transition duration-150 ease-in"
+              leave-from-class="translate-y-0 opacity-100"
+              leave-to-class="translate-y-1 opacity-0"
+            >
+              <div class="bg-white">
+                <PopoverPanel class="absolute z-10 bg-white w-full p-4 rounded">
+                  <div class="grid grid-cols-1">
+                    <nuxt-link
+                      to="/manage_clent"
+                      class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                    >
+                      Manage Employees
+                    </nuxt-link>
+                    <nuxt-link
+                      to="/new_client"
+                      class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                    >
+                    Add New Employee
+                    </nuxt-link>
+                     <nuxt-link
+                      to="/appointments"
+                      class="flex items-center p-2 text-base font-normal text-gray-600 hover:bg-gray-100"
+                    >
+                       Employee Roles
                     </nuxt-link>
                     
                   </div>

@@ -5,7 +5,7 @@ import {
   collection,
 } from "firebase/firestore";
 
- export class Client {
+export class Client {
   constructor(
     name,
     phone,
@@ -32,37 +32,70 @@ import {
     this.state = state;
     this.postalCode = postalCode;
     this.country = country;
-    this.codeNumber=codeNumber;
-    this.invoiceMethod=invoiceMethod;
-    this.openingBal=openingBal;
-    this.startingBalDate=startingBalDate;
-    this.currency=currency;
-    this.email=email
+    this.codeNumber = codeNumber;
+    this.invoiceMethod = invoiceMethod;
+    this.openingBal = openingBal;
+    this.startingBalDate = startingBalDate;
+    this.currency = currency;
+    this.email = email;
   }
-} 
+  toString() {
+    return (
+      this.name +
+      "," +
+      this.phone +
+      "," +
+      this.mobile +
+      "," +
+      this.streetAddress1 +
+      "," +
+      this.streetAddress2 +
+      "," +
+      this.city +
+      "," +
+      this.state +
+      "," +
+      this.postalCode +
+      "," +
+      this.country +
+      "," +
+      this.codeNumber +
+      "," +
+      this.invoiceMethod +
+      "," +
+      this.openingBal +
+      "," +
+      this.startingBalDate +
+      "," +
+      this.currency +
+      "," +
+      this.email
+    );
+  }
+}
 
-export const clientConverter={
-  toFirestore:(client)=>{
-    return{
-      name:client.name,
-      phone:client.phone  ,
-      mobile :client.mobile,
-      streetAddress1 : client.streetAddress1,
-      streetAddress2 : client.streetAddress2,
-      city : client.city,
-      state :client.state,
-      postalCode : client.postalCode,
-      country : client.country,
-      codeNumber : client.codeNumber,
-      invoiceMethod : client.invoiceMethod,
-      openingBal : client.openingBal,
-      startingBalDate : client.startingBalDate,
-      currency :client.currency,
-      email:client.email
-    }
+export const clientConverter = {
+  toFirestore: (client) => {
+    return {
+      name: client.name,
+      phone: client.phone,
+      mobile: client.mobile,
+      streetAddress1: client.streetAddress1,
+      streetAddress2: client.streetAddress2,
+      city: client.city,
+      state: client.state,
+      postalCode: client.postalCode,
+      country: client.country,
+      codeNumber: client.codeNumber,
+      invoiceMethod: client.invoiceMethod,
+      openingBal: client.openingBal,
+      startingBalDate: client.startingBalDate,
+      currency: client.currency,
+      email: client.email,
+    };
   },
-  fromFirestore:(snapshot)=>{
-    const data=snapshot.data()
+  fromFirestore: (snapshot) => {
+    const data = snapshot.data();
     return new Client(
       data.name,
       data.phone,
@@ -80,10 +113,9 @@ export const clientConverter={
       data.startingBalDate,
       data.currency,
       data.email
-    )
-  }
-}
-
+    );
+  },
+};
 
 export const addClient = async (
   name,
@@ -94,7 +126,13 @@ export const addClient = async (
   city,
   state,
   postalCode,
-  country
+  country,
+  codeNumber,
+  invoiceMethod,
+  openingBal,
+  startingBalDate,
+  currency,
+  email
 ) => {
   const db = getFirestore();
   const clientRef = collection(db, "clients");
@@ -109,6 +147,12 @@ export const addClient = async (
     state: state,
     postalCode: postalCode,
     country: country,
+    codeNumber:codeNumber,
+    invoiceMethod:invoiceMethod,
+    openingBal:openingBal,
+    startingBalDate:startingBalDate,
+    currency:currency,
+    email:email,
     time: Timestamp.fromDate(new Date()),
   });
 };
