@@ -122,7 +122,7 @@
                       </button>
                     </MenuItem>
                     <MenuItem v-slot="{ active }">
-                      <nuxt-link to="/update_client"
+                      <nuxt-link :to="{name:'client_updates-id',params:{id:client.id}}"
                       
                         :class="[
                           active ? 'bg-violet-500 text-white' : 'text-gray-900',
