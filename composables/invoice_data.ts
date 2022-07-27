@@ -18,9 +18,11 @@ export const newInvoice = async (
   const invoiceRef = doc(collection(db, "invoices")).withConverter(
     invoiceConverter
   );
+  const time= Date.now().toString()
   await setDoc(
     invoiceRef,
     new Invoice(
+      time,
       method,
       client,
       invoiceNumber,

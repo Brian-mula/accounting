@@ -65,10 +65,17 @@
               <label class="block text-gray-700 text-sm mb-2" for="username">
                 Barcode:
               </label>
+              <div class="flex w-full">
               <input
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+              v-model="barcode"
+                class=" appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                 placeholder=""
               />
+              <div class="p-2 bg-gray-200 cursor-pointer">
+              <font-awesome-icon :icon="['fas','refresh']" @click="generateBarcode"/>
+              </div>
+              </div>
+              
             </div>
           </div>
         </div>
@@ -165,7 +172,15 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const barcode=ref(null)
+const max=ref(1000000000000)
+const min = ref(10000000)
+const generateBarcode=()=>{
+ barcode.value=Math.floor(Math.random()*(max.value-min.value))+max;
+   console.log({...barcode.value})
+}
+</script>
 
 <style lang="css" scoped>
 #custome {

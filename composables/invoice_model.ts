@@ -1,4 +1,5 @@
 export class Invoice {
+  time:string;
   method: string;
   client: string;
   invoiceNumber: string;
@@ -12,6 +13,7 @@ export class Invoice {
   subtotal: number;
   total: number;
   constructor(
+    time:string,
     method: string,
     client: string,
     invoiceNumber: string,
@@ -25,6 +27,7 @@ export class Invoice {
     subtotal: number,
     total: number
   ) {
+    this.time=time;
     this.method = method;
     this.client = client;
     this.invoiceNumber = invoiceNumber;
@@ -43,6 +46,7 @@ export class Invoice {
 export const invoiceConverter = {
   toFirestore: (invoice: Invoice) => {
     return {
+      time:invoice.time,
       method: invoice.method,
       client: invoice.method,
       invoiceNumber: invoice.invoiceNumber,
@@ -60,6 +64,7 @@ export const invoiceConverter = {
   fromFirestore: (snapshot) => {
     const data = snapshot.data();
     return new Invoice(
+      data.time,
       data.method,
       data.client,
       data.invoiceNumber,

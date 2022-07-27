@@ -122,7 +122,7 @@
                 >
                   <option>select item</option>
                   <option
-                    v-for="(item, index) in items"
+                    v-for="(item, index) in filteredItems"
                     :key="index"
                     :value="item.name"
                   >
@@ -246,29 +246,38 @@ const deleteInvoiceItem=()=>{
 }
 i_issueDate.value = new Date().toISOString().substring(0, 10);
 
-watch(i_item, () => {
-  items.value.forEach((item) => {
-    i_unitPrice.value = item.price;
-  });
-});
+
 watch(i_quantity,()=>{
-i_subtotal.value=i_unitPrice.value* i_quantity.value;
+i_subtotal.value=parseInt(i_unitPrice.value)* parseInt( i_quantity.value);
 })
 // input autopopulation
 const items = ref([
   {
     name: "Truck",
     price: 3000000,
+    description:"it was bought for deliveries"
   },
   {
     name: "Gari",
     price: 4000000,
+    description:"bought for staff transportation"
   },
-  {
-    name: "Van",
-    price: 3500000,
-  },
+  
 ]);
+const filteredItems=computed(()=>{
+  items.value.filter((item)=>{
+    i_description.value=item.description;
+    i_unitPrice.value=item.price;
+   
+  })
+})
+// watch(i_item, () => {
+//   items.value.forEach((item) => {
+//     i_unitPrice.value = item.price;
+//     i_description.value=item.description
+//   });
+  
+// });
 
 const handleSubmit = () => {
   console.log(myDate.value);
