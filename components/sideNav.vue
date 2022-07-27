@@ -358,4 +358,8 @@ import { Popover, PopoverButton, PopoverPanel } from "@headlessui/vue";
 const isActive = ref(true);
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="css" scoped>
+.router-link-exact-active{
+  background-color: rgb(77, 77, 255);
+}
+</style>
