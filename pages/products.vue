@@ -171,8 +171,9 @@
 </template>
 
 <script setup>
-import { Popover, PopoverButton, PopoverPanel } from "@headlessui/vue";
+
 import { Menu, MenuButton, MenuItems, MenuItem,} from "@headlessui/vue";
+
 </script>
 
 <style lang="scss" scoped></style>
