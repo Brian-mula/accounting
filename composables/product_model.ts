@@ -54,7 +54,7 @@ export const productConverter = {
       low_stock_threshhold: product.low_stock_threshhold,
     };
   },
-  fromFirestoe: (snapshot) => {
+  fromFirestore: (snapshot) => {
     const data = snapshot.data();
     return new Product(
       data.name,
