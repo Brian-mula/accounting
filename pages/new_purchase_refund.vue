@@ -20,7 +20,7 @@
       <div class="bg-white mx-3" id="custom">
         <div class="mb-4 w-full mx-4 flex items-center py-2 px-4">
           <label class="block text-gray-700 text-md mx-4 mb-2" for="username">
-            P.I Number:
+            Refund Number:
           </label>
           <input
             class="shadow appearance-none border rounded w-40 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -29,21 +29,13 @@
         </div>
         <div class="mb-4 w-full mx-4 flex items-center py-2 px-4">
           <label class="block text-gray-700 text-md mx-4 mb-2" for="username">
-            Date:
+           Refund Date:
           </label>
           <div class="flex">
             <Datepicker v-model="issueDate"></Datepicker>
           </div>
         </div>
-        <div class="mb-4 w-full mx-4 flex items-center py-2 px-4">
-          <label class="block text-gray-700 text-md mx-4 mb-2" for="username">
-            Payment terms:
-          </label>
-          <input
-            class="shadow appearance-none border rounded w-40 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="30 days"
-          />
-        </div>
+        
       </div>
     </div>
 
@@ -102,11 +94,7 @@
             <td class="px-6 py-4 w-20">Ksh.xxx</td>
             <td class="px-6 py-4 w-20">
               <div class="cursor-pointer" @click="deleteRaw">
-                <img
-                  src="~/assets/images/delete.png"
-                  alt=""
-                  class="h-6 w-6 mx-2"
-                />
+                <font-awesome-icon :icon="['fas','trash']" class="text-red-500" />
               </div>
             </td>
           </tr>
@@ -114,11 +102,7 @@
       </table>
       <div class="bg-white shadow-md p-4 flex justify-between">
         <div class="cursor-pointer" @click="addNewRow">
-          <img
-            src="~/assets/images/add-svgrepo-com.svg"
-            alt=""
-            class="h-6 w-6 mx-2"
-          />
+           <font-awesome-icon :icon="['fas','plus']" class="text-green-500" />
         </div>
         <div class="text-purple-800">Total: Ksh. xxx</div>
       </div>
