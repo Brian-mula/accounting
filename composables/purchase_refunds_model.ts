@@ -31,7 +31,7 @@ export class PurchaseRefund {
       this.total = total;
     }
   }
-  export const purchaseInvoiceConverter = {
+  export const purchaseRefundConverter = {
     toFirestore: (purchase: PurchaseRefund) => {
       return {
         supplier: purchase.supplier,
