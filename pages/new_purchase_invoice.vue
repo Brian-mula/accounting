@@ -102,11 +102,7 @@
             <td class="px-6 py-4 w-20">Ksh.xxx</td>
             <td class="px-6 py-4 w-20">
               <div class="cursor-pointer" @click="deleteRaw">
-                <img
-                  src="~/assets/images/delete.png"
-                  alt=""
-                  class="h-6 w-6 mx-2"
-                />
+                <font-awesome-icon :icon="['fas','trash']" class="text-red-500" />
               </div>
             </td>
           </tr>
@@ -114,11 +110,7 @@
       </table>
       <div class="bg-white shadow-md p-4 flex justify-between">
         <div class="cursor-pointer" @click="addNewRow">
-          <img
-            src="~/assets/images/add-svgrepo-com.svg"
-            alt=""
-            class="h-6 w-6 mx-2"
-          />
+          <font-awesome-icon :icon="['fas','plus']" class="text-green-500" />
         </div>
         <div class="text-purple-800">Total: Ksh. xxx</div>
       </div>

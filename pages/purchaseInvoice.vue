@@ -3,17 +3,13 @@
   <div class="flex justify-end items-end p-2">
       <div
         
-        class="bg-blue-600 py-2 pr-2 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
+        class="bg-blue-600 pr-2 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
       >
         
          <nuxt-link to="/new_purchase_invoice"
-        class="bg-blue-600 p-4 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
+        class="bg-blue-600 py-2 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
       >
-        <img
-          src="~/assets/images/add-svgrepo-com.svg"
-          alt=""
-          class="h-6 w-6 mx-2"
-        />
+        <font-awesome-icon :icon="['fas','plus']" class="text-white px-2" />
         <h4 class="text-white">New Puchase Invoice</h4>
       </nuxt-link>
       </div>
