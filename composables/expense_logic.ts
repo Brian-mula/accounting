@@ -8,9 +8,9 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 
-// !add a new inbound into database
+// !add a new expense into database
 
-export const newInbound = async (
+export const newExpense = async (
   amount: number,
   description: string,
   code_no: number,
@@ -39,8 +39,8 @@ export const newInbound = async (
   );
 };
 
-// !get all inbounds
-export const getAllInbounds = async () => {
+// !get all expenses
+export const getAllExpenses = async () => {
     const db = getFirestore();
     const expenses=[];
     const expenseSnap= await getDocs(collection(db,'expenses'))
@@ -51,7 +51,7 @@ export const getAllInbounds = async () => {
 };
 
 // ! get a single inbound basing on a given ID
-export const getSingleInbound = async (id: string) => {
+export const getSingleExpense = async (id: string) => {
     const db =getFirestore();
     var expense=null;
     const expenseRef=doc(db,'expenses',id)
@@ -66,7 +66,7 @@ export const getSingleInbound = async (id: string) => {
 
 // ! delete a document
 
-export const deleteInbound = async (id: string) => {
+export const deleteExpense = async (id: string) => {
     const db=getFirestore()
     await deleteDoc(doc(db,'expenses',id))
 };
