@@ -6,6 +6,7 @@ export class Expense {
   vendor: string;
   category: string;
   journal_account: string;
+  image:string
 
   constructor(
     amount: number,
@@ -14,7 +15,8 @@ export class Expense {
     date: string,
     vendor: string,
     category: string,
-    journal_account: string
+    journal_account: string,
+    image:string
   ) {
     this.amount = amount;
     this.description = description;
@@ -23,6 +25,7 @@ export class Expense {
     this.vendor = vendor;
     this.category = category;
     this.journal_account = journal_account;
+    this.image=image;
   }
 }
 
@@ -36,6 +39,7 @@ export const expenseConverter = {
       vendor: expense.vendor,
       category: expense.category,
       journal_account: expense.journal_account,
+      image:expense.image
     };
   },
   fromFirestore: (snapshot) => {
@@ -47,7 +51,8 @@ export const expenseConverter = {
       data.date,
       data.vendor,
       data.category,
-      data.journal_account
+      data.journal_account,
+      data.image
     );
   },
 };
