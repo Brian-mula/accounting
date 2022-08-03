@@ -8,11 +8,7 @@
           to="/new_expense"
           class="bg-blue-600 px-4 py-1 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
         >
-          <img
-            src="~/assets/images/add-svgrepo-com.svg"
-            alt=""
-            class="h-4 w-4 mx-2"
-          />
+           <font-awesome-icon :icon="['fas','plus']" class="text-white px-2" />
           <h4 class="text-white">New Expense</h4>
         </nuxt-link>
       </div>
@@ -20,7 +16,7 @@
     <div class="flex justify-between items-center mb-4">
       <div class="flex justify-center w-80 cursor-pointer">
         <div
-          class="flex justify-center p-6 rounded-md shadow-lg bg-white w-full"
+          class="flex justify-center p-4 rounded-md shadow-sm bg-white w-full"
         >
           <div>
             <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">
@@ -33,7 +29,7 @@
 
       <div class="flex justify-center w-80 cursor-pointer">
         <div
-          class="p-6 rounded-md shadow-lg bg-white w-full flex justify-center"
+          class="p-4 rounded-md shadow-sm bg-white w-full flex justify-center"
         >
           <div>
             <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">
@@ -46,7 +42,7 @@
 
       <div class="flex justify-center w-80 cursor-pointer">
         <div
-          class="flex justify-center p-6 rounded-md shadow-lg bg-white w-full"
+          class="flex justify-center p-4 rounded-md shadow-sm bg-white w-full"
         >
           <div>
             <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">

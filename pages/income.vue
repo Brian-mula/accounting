@@ -8,11 +8,7 @@
           to="/new_income"
           class="bg-blue-600 px-4 py-1 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
         >
-          <img
-            src="~/assets/images/add-svgrepo-com.svg"
-            alt=""
-            class="h-4 w-4 mx-2"
-          />
+          <font-awesome-icon :icon="['fas','plus']" class="text-white px-2" />
           <h4 class="text-white">New Income</h4>
         </nuxt-link>
       </div>
