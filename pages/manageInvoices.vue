@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="flex justify-end items-end p-4">
+    <div class="flex justify-end items-end py-2">
       <nuxt-link to="/newInvoice"
-        class="bg-blue-600 p-4 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
+        class="bg-blue-600 p-2 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
       >
        <font-awesome-icon :icon="['fas','plus']" class="text-white"/>
         <h4 class="text-white">New Invoice</h4>
@@ -30,7 +30,7 @@
               Invoice No.
             </label>
             <input
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class=" appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder=""
             />
           </div>

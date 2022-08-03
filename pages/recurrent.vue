@@ -1,15 +1,11 @@
 <template>
   <div>
-    <div class="flex justify-end items-end p-4">
+    <div class="flex justify-end items-end py-2">
       <nuxt-link
         to="/newInvoice"
-        class="bg-blue-600 p-4 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
+        class="bg-blue-600 p-2 rounded-sm cursor-pointer hover:bg-blue-700 flex items-center"
       >
-        <img
-          src="~/assets/images/add-svgrepo-com.svg"
-          alt=""
-          class="h-6 w-6 mx-2"
-        />
+        <font-awesome-icon :icon="['fas','plus']" class="text-white px-2" />
         <h4 class="text-white">New Subscription</h4>
       </nuxt-link>
     </div>
@@ -114,23 +110,15 @@
               <div class="inline-flex rounded-md shadow-sm" role="group">
                 <button
                   type="button"
-                  class="py-2 px-3 text-sm font-medium text-gray-900 bg-transparent rounded-l-lg border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
+                  class="py-2 px-3 text-sm font-medium bg-transparent rounded-l-lg border border-gray-900 hover:bg-blue-200 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
                 >
-                   <img
-                    src="~/assets/images/pencil.png"
-                    alt=""
-                    class="h-6 w-6 mx-2"
-                  />
+                   <font-awesome-icon :icon="['fas','pencil']" class="text-emerald-500 px-2"/>
                 </button>
                 <button
                   type="button"
                   class="py-2 px-4 text-sm font-medium text-gray-900 bg-transparent border-t border-b border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
                 >
-                  <img
-                    src="~/assets/images/delete.png"
-                    alt=""
-                    class="h-6 w-6 mx-2"
-                  />
+                  <font-awesome-icon :icon="['fas','trash']" class="text-red-500 px-2"/>
                 </button>
               </div>
             </td>
