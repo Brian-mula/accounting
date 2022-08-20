@@ -4,6 +4,7 @@
       <div class="flex">
         <div class="m-2 bg-white" id="custome">
           <h3 class="text-purple-900 px-4 pt-2 border">Item details</h3>
+           
           <div class="px-4">
             <div class="flex">
               <div class="mb-4 w-96">
@@ -11,6 +12,7 @@
                   Name:
                 </label>
                 <input
+                v-model="p_name"
                   class=" appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -21,6 +23,7 @@
                   Item SKU:
                 </label>
                 <input
+                v-model="p_sku"
                   class=" appearance-none border  w-40 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -31,6 +34,7 @@
                 Description:
               </label>
               <input
+              v-model="p_desc"
                 class=" appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder=""
               />
@@ -43,10 +47,11 @@
                     Category
                   </label>
                   <select
+                  v-model="p_category"
                     class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     aria-label="Default select example"
                   >
-                    <option value="3">Assets</option>
+                    <option value="assets">Assets</option>
                   </select>
                 </div>
               </div>
@@ -55,6 +60,7 @@
                   Brand:
                 </label>
                 <input
+                v-model="p_brand"
                   class=" appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -88,6 +94,7 @@
                   Purchase Price.
                 </label>
                 <input
+                v-model="p_purchase_price"
                   class=" appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -97,6 +104,7 @@
                   Selling Price.
                 </label>
                 <input
+                v-model="p_selling_price"
                   class="appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   placeholder=""
                 />
@@ -141,6 +149,7 @@
               Initial stock level.
             </label>
             <input
+            v-model="p_initial"
               type="number"
               class=" appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder=""
@@ -152,6 +161,7 @@
               Low stock Threshold
             </label>
             <input
+            v-model="p_low_stock"
               type="number"
               class=" appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder=""
@@ -162,6 +172,7 @@
 
       <div class="flex items-center justify-start mt-2 mb-2">
         <button
+        @click="handleSubmit"
           type="button"
           class="inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
         >
@@ -180,6 +191,29 @@ const generateBarcode=()=>{
  barcode.value=Math.floor(Math.random()*(max.value-min.value))+max;
    console.log({...barcode.value})
 }
+const p_name=ref('')
+const p_sku=ref('')
+const p_desc=ref('')
+const p_category=ref('')
+const p_brand=ref('')
+const p_barcode=ref('')
+const p_purchase_price=ref('')
+const p_selling_price=ref('')
+const p_initial=ref('')
+const p_low_stock=ref('')
+const jNumber=ref();
+const date=ref();
+
+date.value=new Date().toISOString().substring(0, 10);
+
+
+const journals=ref([])
+jNumber.value=journals.value.length + 1;
+console.log(jNumber.value.length)
+
+onMounted(async()=>{
+ journals= await getAllJournals()
+})
 </script>
 
 <style lang="css" scoped>

@@ -15,7 +15,7 @@ import {
     action: string,
     staff: string,
     jNumber: number,
-    name: string,
+    accName: string,
     description: string,
     amount: number
   ) => {
@@ -30,7 +30,7 @@ import {
         action,
         staff,
         jNumber,
-        name,
+        accName,
         description,
         amount,
         

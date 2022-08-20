@@ -3,7 +3,7 @@ export class JournalModel {
   action: string;
   staff: string;
   jNumber: number;
-  name: string;
+  accName: string;
   description: string;
   amount: number;
 
@@ -12,7 +12,7 @@ export class JournalModel {
     action: string,
     staff: string,
     jNumber: number,
-    name: string,
+    accName: string,
     description: string,
     amount: number
   ) {
@@ -20,7 +20,7 @@ export class JournalModel {
     this.action = action;
     this.staff = staff;
     this.jNumber = jNumber;
-    this.name = name;
+    this.accName = accName;
     description = description;
     amount = amount;
   }
@@ -33,7 +33,7 @@ export const journalConverter = {
       action: journal.action,
       staff: journal.staff,
       jNumber: journal.jNumber,
-      name: journal.name,
+      name: journal.accName,
       description: journal.description,
       amount: journal.amount,
     };
@@ -46,7 +46,7 @@ export const journalConverter = {
       data.action,
       data.staff,
       data.jNumber,
-      data.name,
+      data.accName,
       data.description,
       data.amount
     );
