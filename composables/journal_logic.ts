@@ -11,6 +11,7 @@ import {
   // !add a new journal into database
   
   export const newJournal = async (
+    id:string,
     date: string,
     action: string,
     staff: string,
@@ -20,7 +21,7 @@ import {
     amount: number
   ) => {
     const db = getFirestore();
-    const journalRef = doc(collection(db, "journals")).withConverter(
+    const journalRef = doc(db,'journals',id).withConverter(
         journalConverter
     );
     await setDoc(
