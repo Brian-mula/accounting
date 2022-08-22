@@ -40,7 +40,15 @@ export const newProduct = async (
     )
   );
   // !add new journal record for a given product
-  await newJournal(productRef.id, date,action,staff,jNumber,name,description,purchase_price)
+  await setDoc(doc(db, "journals", productRef.id), {
+    date:date,
+        action:action,
+        staff:staff,
+        jNumber:jNumber,
+        accName:name,
+        description:description,
+        amount:purchase_price
+  })
 };
 
 // !get all products

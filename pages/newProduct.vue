@@ -67,22 +67,34 @@
               </div>
               <!-- !end of category and brand -->
             </div>
-            <div class="mb-4 w-72">
-              <label class="block text-gray-700 text-sm mb-2" for="username">
-                Barcode:
-              </label>
-              <div class="flex w-full">
+            <div class="flex justify-between">
+              <div class="mb-4 w-72">
+                <label class="block text-gray-700 text-sm mb-2" for="username">
+                  Barcode:
+                </label>
+                <div class="flex w-full">
+                  <input
+                    v-model="barcode"
+                    class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+                    placeholder=""
+                  />
+                  <div class="p-2 bg-gray-200 cursor-pointer">
+                    <font-awesome-icon
+                      :icon="['fas', 'refresh']"
+                      @click="generateBarcode"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="mb-4 w-32">
+                <label class="block text-gray-700 text-sm mb-2" for="username">
+                  JNo.:
+                </label>
                 <input
-                  v-model="barcode"
+                  v-model="jNumber"
                   class="appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
                   placeholder=""
                 />
-                <div class="p-2 bg-gray-200 cursor-pointer">
-                  <font-awesome-icon
-                    :icon="['fas', 'refresh']"
-                    @click="generateBarcode"
-                  />
-                </div>
               </div>
             </div>
           </div>
@@ -134,11 +146,17 @@
                     Tax 2
                   </label>
                   <select
-                  v-model="p_tax"
+                    v-model="p_tax"
                     class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     aria-label="Default select example"
                   >
-                    <option v-for="tax in taxes" :key="tax.title" :value="tax.amount">{{tax.title}}</option>
+                    <option
+                      v-for="tax in taxes"
+                      :key="tax.title"
+                      :value="tax.amount"
+                    >
+                      {{ tax.title }}
+                    </option>
                   </select>
                 </div>
               </div>
@@ -191,6 +209,7 @@
 </template>
 
 <script setup>
+const router = useRouter();
 const barcode = ref(null);
 const max = ref(1000000000000);
 const min = ref(10000000);
@@ -198,6 +217,11 @@ const generateBarcode = () => {
   barcode.value = Math.floor(Math.random() * (max.value - min.value)) + max;
   console.log({ ...barcode.value });
 };
+const journals = ref([]);
+onMounted(async () => {
+  journals.value = await getAllJournals();
+  console.log(journals.value.length+1);
+});
 const p_name = ref("");
 const p_sku = ref("");
 const p_desc = ref("");
@@ -208,28 +232,28 @@ const p_purchase_price = ref("");
 const p_selling_price = ref("");
 const p_initial = ref("");
 const p_low_stock = ref("");
-const p_tax=ref()
-const jNumber = ref();
+const p_tax = ref();
+const jNumber=ref()
 const date = ref();
 const staff = ref("Mulati Brian");
 const action = ref("add");
-const taxes=ref([
+const taxes = ref([
   {
-    title:'VAt',
-    amount: 10
-  }
-])
+    title: "VAt",
+    amount: 10,
+  },
+]);
 date.value = new Date().toISOString().substring(0, 10);
 
-const journals = ref([]);
-jNumber.value = journals.value.length + 1;
+
+ jNumber.value = journals.value.length+1;
 
 const handleSubmit = async () => {
   await newProduct(
     date.value,
     staff.value,
     action.value,
-    jNumber.value,
+    journals.value.length+1,
     p_name.value,
     p_sku.value,
     p_desc.value,
@@ -242,11 +266,10 @@ const handleSubmit = async () => {
     parseInt(p_initial.value),
     parseInt(p_low_stock.value)
   );
+  router.push("/products");
 };
 
-onMounted(async () => {
-  journals = await getAllJournals();
-});
+
 </script>
 
 <style lang="css" scoped>
