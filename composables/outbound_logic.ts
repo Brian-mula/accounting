@@ -51,7 +51,7 @@ export const getAllOutbounds=async()=>{
 }
 
 // ! get a single outbound basing on a given ID
-export const getSingleInbound=async(id:string)=>{
+export const getSingleOutbound=async(id:string)=>{
     const db =getFirestore();
     var outbound=null;
     const outboundRef=doc(db,'outbounds',id)
@@ -65,7 +65,7 @@ export const getSingleInbound=async(id:string)=>{
 }
 
 // ! delete a document
-export const deleteInbound=async(id:string)=>{
+export const deleteOutbound=async(id:string)=>{
     const db = getFirestore();
     await deleteDoc(doc(db,'outbounds',id))
 }

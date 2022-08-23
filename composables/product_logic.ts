@@ -3,6 +3,10 @@ import { doc, setDoc, collection, getFirestore,getDocs,getDoc,deleteDoc } from "
 
 // !add new product to database
 export const newProduct = async (
+  date:string,
+  staff:string,
+  action:string,
+  jNumber:number,
   name: string,
   sku: number,
   description: string,
@@ -35,6 +39,16 @@ export const newProduct = async (
       low_stock_threshhold
     )
   );
+  // !add new journal record for a given product
+  await setDoc(doc(db, "journals", productRef.id), {
+    date:date,
+        action:action,
+        staff:staff,
+        jNumber:jNumber,
+        accName:name,
+        description:description,
+        amount:purchase_price
+  })
 };
 
 // !get all products
